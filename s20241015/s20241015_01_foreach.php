@@ -13,7 +13,7 @@
     $assocArr = [
         's1' => 'amy',
         's2' => 'amy',
-        's3' => 'amy'
+        's3' => 'amy',
     ];
     dd($assocArr);
 

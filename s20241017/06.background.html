@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            /* 盒模型 */
+            width: 600px;
+            height: 600px;
+            border: 5px solid #333;
+            box-shadow: 0 0 20px rbga(0, 0, 0, 0.5);
+            margin: 50px auto;
+
+            /* 文字 */
+            font-size: 3rem;
+            color: yellow;
+            text-shadow: 1px 1px 3px rgb(0, 0, 0);
+        }
+
+        .bg-color {
+            background: #faa;
+            /* 縮寫 */
+            /* background: deeppink; */
+        }
+
+        .bg-img {
+            /* picsum 先打好url()在框框內打pic即可 */
+            background-image: url("https://picsum.photos/100/100/?random=10");
+        }
+
+        .bg-repeat-x {
+            background-repeat: repeat-x;
+        }
+
+        .bg-repeat-y {
+            background-repeat: repeat-y;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="box bg-color">background-color</div>
+    <div class="box bg-img">background-image</div>
+    <!-- .box.bg-img.bg-repeat-x -->
+    <div class="box bg-img bg-repeat-x">background-repeat-x</div>
+    <div class="box bg-img bg-repeat-y">background-repeat-y</div>
+
+
+
+</body>
+
+</html>
