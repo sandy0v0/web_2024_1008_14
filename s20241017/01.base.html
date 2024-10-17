@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基本設定</title>
+
+    <!-- 第二種方式使用 link，適合用於開發網站 -->
+    <link rel="stylesheet" href="./style1.css">
+
+    <!-- 第一種使用 style 標籤樣式，該文件的專屬樣式，自己練習時可以使用 -->
+
+    <style>
+        /*
+            選擇器 {
+            屬性:值;
+            屬性:值;
+            ...
+            }
+        */
+
+        /* 標籤選擇器 */
+        h1 {
+            color: red;
+            background-color: yellow;
+        }
+
+        p {
+            font-size: 30px;
+            color: green;
+            background-color: yellow;
+        }
+
+
+        /* 群組選擇器 */
+        /* h1 的顏色被覆蓋了，由紅色變成藍色 */
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: blue;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- 第三種方式 行內樣式(inline style)，標籤的專屬樣式，優先等級最高 -->
+    <h1 style="color: deeppink">title1</h1>
+
+    <h1>title1</h1>
+    <!-- lorem 假字，lorem+數字 -->
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ipsa itaque a id quae, in impedit nemo mollitia
+        libero voluptatibus repellendus rerum ratione fugiat modi reiciendis adipisci dolore quisquam dolor!</p>
+
+    <h1>title1</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ipsa itaque a id quae, in impedit nemo mollitia
+        libero voluptatibus repellendus rerum ratione fugiat modi reiciendis adipisci dolore quisquam dolor!</p>
+
+    <h1>title1</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga ipsa itaque a id quae, in impedit nemo mollitia
+        libero voluptatibus repellendus rerum ratione fugiat modi reiciendis adipisci dolore quisquam dolor!</p>
+
+
+    <!-- <hr>
+    <img src="" alt="" srcset="">
+    <br>
+    <input type="text"> -->
+
+    <hr>
+
+    <h1>hello world</h1>
+    <h2>hello world</h2>
+    <h3>hello world</h3>
+    <h4>hello world</h4>
+    <h5>hello world</h5>
+    <h6>hello world</h6>
+
+
+</body>
+
+</html>
