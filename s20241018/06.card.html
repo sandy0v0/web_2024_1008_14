@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>製作卡片練習</title>
+    <style>
+        .card {
+            width: 300px;
+            /* border: 1px solid black; */
+            padding: 10px;
+            box-sizing: border-box;
+            position: relative;
+            margin: 20px;
+            /* 圓角邊框 border-radius，只需設定小小的即可，不然可能會變成橢圓形*/
+            border-radius: 10px;
+            /* 陰影 */
+            box-shadow: 5px 5px 10px gray;
+        }
+
+        .card-ribbon {
+            position: absolute;
+            top: -18px;
+            left: -18px;
+        }
+
+        .card-img {
+            width: 100%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="card">
+        <img src="./ribbon.png" class="card-ribbon">
+        <img src="./Nothing Phone 2 .webp" alt="" class="card-img">
+        <p>NOTHING[福利品]Nothing Phone (2) (12G+256GB) 全機9成9新</p>
+        <p>$15,900</p>
+
+    </div>
+</body>
+
+</html>
