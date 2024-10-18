@@ -24,10 +24,30 @@
 
         span {
             text-decoration: overline underline;
+            text-align: center;
         }
 
         p {
             line-height: 3em;
+        }
+
+        .inline-black {
+            width: 100px;
+            height: 100px;
+            background: pink;
+            /*
+              display 修改元素的顯示方式
+              none: 不顯示
+              inline-block: 外在排列和 inline 相同，內部排列和 block 相同
+            */
+            display: inline-block;
+            text-align: center;
+            /* margin-left: -4px; */
+        }
+
+        /* class 是 inline-block 但不是第一個 */
+        .inline-black:not(:first-child) {
+            margin-left: -4px;
         }
     </style>
 </head>
@@ -39,9 +59,15 @@
         <img src="https://picsum.photos/id/168/20/20/?random=10" alt="">
     </p>
 
-    <div style="height: 30px;line-height: 30px;border: 1px solid black">
+    <div style="height: 30px;line-height: 30px;border: 2px solid black">
         aaa
     </div>
+    <div>
+        <div class="inline-black">inline-black</div>
+        <div class="inline-black">inline-black</div>
+        <div class="inline-black">inline-black</div>
+    </div>
+
 
 </body>
 
