@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定位</title>
+
+    <style>
+        body {
+            /* 調整資料走向 */
+            /* direction: rtl; */
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+
+        #relative {
+            /* 
+            top、left、right、bottom 距離原本的位置偏移
+            left、right 同時設定時會依照資料走向為主
+            top、bottom 同時設定時以 top 為主
+            */
+            top: 100px;
+            /* relative 相對於原本位置偏移 */
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="relative" class="box">relative</div>
+
+
+
+</body>
+
+</html>
