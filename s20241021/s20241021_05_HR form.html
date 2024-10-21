@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+        }
+
+        span {
+            display: inline-block;
+            width: 10%;
+            text-align: center;
+            background-color: lightblue;
+        }
+
+        input[type="text"] {
+            width: 110px;
+            /* width: 70%; */
+        }
+
+        input[type="number"] {
+            width: 110px;
+            /* width: 70%; */
+        }
+
+        input[type="Address"] {
+            width: 300px;
+            /* width: 70%; */
+        }
+
+        table {
+            background: #ffffff;
+            width: 530px;
+            height: 250px;
+            border-collapse: collapse;
+        }
+
+        td,
+        th {
+            border: 1px solid black;
+            text-align: center;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <fieldset>
+        <legend>HR form </legend>
+        <form action="getData.php">
+            <p style="text-align: center; font-size: 20px; font-weight: bold;">
+                基本資料表
+            </p>
+
+            <label for="name">姓名: </label>
+            <input type="text" name="name" id="name" value="輸入姓名">
+
+            <label for="">性別: </label>
+            <!-- input radio 單選 name 要一樣-->
+            <input type="radio" id="" name="Gender" value="男">
+            <label for="Male">男</label>
+            <input type="radio" id="" name="Gender" value="女">
+            <label for="Female">女</label><br>
+
+            <br>
+            <!-- birthday -->
+            <!-- label -->
+            <label for="">生日:</label>
+            <!-- input text -->
+            <input type="date" name="myBirthday" id="" value="2000/01/01">
+
+
+            <label for="Blood Type">血型:</label>
+            <select id="Blood Type" name="cars">
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="AB">AB</option>
+                <option value="O">O</option>
+            </select>
+
+            <br><br>
+            <!-- price -->
+            <!-- label -->
+            <label for="">身高:</label>
+            <!-- input text -->
+            <!-- step="0.01"：這表示用戶可以輸入最多兩位小數的數字（如 10.99） -->
+            <!-- required：這個屬性確保用戶必須填寫這個字段。 -->
+            <input type="number" name="myPrice1" id="" step="0.01" required>
+
+            <label for="">體重: </label>
+            <input type="number" name="myPrice2" id="" step="0.01" required>
+            <br><br>
+
+            <label for="">手機: </label>
+            <!-- input text -->
+            <input type="text" name="myMobile" id="">
+
+            <label for="">家電: </label>
+            <!-- input text -->
+            <input type="text" name="myMobile" id="">
+            <br><br>
+
+            <label for="">戶籍地址: </label>
+            <!-- input text -->
+            <input type="Address" name="myAddress" id="">
+            <br><br>
+
+            <label for="">通訊地址: </label>
+            <!-- input text -->
+            <input type="Address" name="myAddress" id="">
+
+            <table>
+                <tr>
+                    <td>學位</td>
+                    <td>學校名稱</td>
+                    <td>科系名稱</td>
+                    <td>入學年月</td>
+                    <td>畢業年月</td>
+                    <td>是否畢業</td>
+                </tr><br>
+
+                <tr>
+                    <td>博士</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <input type="checkbox" id="" name="myBox1" value="Y">
+                        <label for="myBox1"> 是</label>
+                        <input type="checkbox" id="" name="myBox2" value="N ">
+                        <label for="myBox2"> 否</label>
+                    </td>
+                </tr><br>
+
+                <tr>
+                    <td>碩士</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <input type="checkbox" id="" name="myBox1" value="Y">
+                        <label for="myBox1"> 是</label>
+                        <input type="checkbox" id="" name="myBox2" value="N ">
+                        <label for="myBox2"> 否</label>
+                    </td>
+                </tr><br>
+                <tr>
+                    <td>學士</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <input type="checkbox" id="" name="myBox1" value="Y">
+                        <label for="myBox1"> 是</label>
+                        <input type="checkbox" id="" name="myBox2" value="N ">
+                        <label for="myBox2"> 否</label>
+                    </td>
+                </tr><br>
+                <tr>
+                    <td>專科</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <input type="checkbox" id="" name="myBox1" value="Y">
+                        <label for="myBox1"> 是</label>
+                        <input type="checkbox" id="" name="myBox2" value="N ">
+                        <label for="myBox2"> 否</label>
+                    </td>
+                </tr><br>
+                <tr>
+                    <td>高中(職)</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <input type="checkbox" id="" name="myBox1" value="Y">
+                        <label for="myBox1"> 是</label>
+                        <input type="checkbox" id="" name="myBox2" value="N ">
+                        <label for="myBox2"> 否</label>
+                    </td>
+                </tr><br>
+            </table>
+
+            <p>(๑•̀ㅁ•́๑)✧請問您自哪些管道獲知此職缺？</p>
+            <!-- input checkbox 複選 name [] -->
+            <input type="checkbox" id="" name="myBox1" value="徵才活動">
+            <label for="myBox1"> 徵才活動</label>
+            <input type="checkbox" id="" name="myBox2" value="人力銀行 ">
+            <label for="myBox2"> 人力銀行</label>
+            <input type="checkbox" id="" name="myBox3" value="顧問公司">
+            <label for="myBox3"> 顧問公司</label>
+            <input type="checkbox" id="" name="myBox4" value="朋友/親戚介紹">
+            <label for="myBox4"> 朋友/親戚介紹</label>
+            <input type="checkbox" id="" name="myBox5" value="學校/老師">
+            <label for="myBox5"> 學校/老師</label>
+
+            <p>自我介紹</p>
+            <label for=""></label>
+            <textarea name="myTextarea" id="" cols="70" rows="5"></textarea>
+            </P>
+            <br>
+            <!-- input submit-->
+            <input type="submit" value="提交">
+
+        </form>
+
+
+</body>
+
+</html>

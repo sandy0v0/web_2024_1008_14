@@ -5,79 +5,136 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        span {
+            display: inline-block;
+            width: 10%;
+            text-align: center;
+            background-color: lightblue;
+        }
+
+        input[type="text"] {
+            /* width: 500px; */
+            width: 70%;
+        }
+
+        input[type="number"] {
+            /* width: 500px; */
+            width: 70%;
+        }
+    </style>
+
+
 </head>
 
 <body>
-    <form action="getData.php">
-        <!-- name -->
-        <!-- input text -->
-        <label for="">
-            name:
-        </label>
-        <input type="text" name="myName" id="">
+    <fieldset>
+        <legend>HR form </legend>
+        <form action="getData.php">
+            <!-- input  -->
+            <!-- input text -->
+            <!-- input number -->
+            <!-- input detetime -->
+            <!-- input radio -->
+            <!-- input checkbox -->
+            <!-- input submit -->
 
-        <br><br>
-        <!-- mobile -->
-        <!-- label -->
-        <label for="">
-            mobile:
-        </label>
-        <!-- input text -->
-        <input type="text" name="myMobile" id="">
-
-        <br><br>
-        <!-- price -->
-        <!-- label -->
-        <label for="">
-            price:
-        </label>
-        <!-- input text -->
-        <!-- step="0.01"：這表示用戶可以輸入最多兩位小數的數字（如 10.99） -->
-        <!-- required：這個屬性確保用戶必須填寫這個字段。 -->
-        <input type="number" name="myPrice" id="" step="0.01" required>
-
-        <br><br>
-        <!-- birthday -->
-        <!-- label -->
-        <label for="">
-            birthday:
-        </label>
-        <!-- input text -->
-        <input type="date" name="myBirthday" id="">
-
-        <br><br>
-        <p>測試checkbox-選擇餐點：</p>
-        <!-- checkbox -->
-        <input type="checkbox" id="" name="myBox1" value="麵">
-        <label for="myBox1"> 麵</label><br>
-        <input type="checkbox" id="" name="myBox2" value="飯">
-        <label for="myBox2"> 飯</label><br>
-        <input type="checkbox" id="" name="myBox3" value="粥">
-        <label for="myBox3"> 粥</label><br>
-        <input type="checkbox" id="" name="myBox4" value="壽司">
-        <label for="myBox4"> 壽司</label><br>
-
-        <br>
-        <p>測試radio-選擇想學習的網路語言:</p>
-        <!-- radio -->
-        <input type="radio" id="html" name="fav_language" value="HTML">
-        <label for="html">HTML</label><br>
-        <input type="radio" id="css" name="fav_language" value="CSS">
-        <label for="css">CSS</label><br>
-        <input type="radio" id="javascript" name="fav_language" value="JavaScript">
-        <label for="javascript">JavaScript</label><br>
-
-        <br>
-        <!-- input submit-->
-        <input type="submit" value="submit">
+            <!-- select -->
+            <!-- textarea -->
 
 
+            <!-- input  -->
+            <!-- input text -->
+            <label for="name">
+                name:
+            </label>
+            <input type="text" name="name" id="name" value="輸入姓名">
+
+            <br><br>
+            <!-- mobile -->
+            <!-- label -->
+            <label for="">
+                mobile:
+            </label>
+            <!-- input text -->
+            <input type="text" name="myMobile" id="">
+
+            <br><br>
+            <!-- price -->
+            <!-- label -->
+            <label for="">
+                price:
+            </label>
+            <!-- input text -->
+            <!-- step="0.01"：這表示用戶可以輸入最多兩位小數的數字（如 10.99） -->
+            <!-- required：這個屬性確保用戶必須填寫這個字段。 -->
+            <input type="number" name="myPrice" id="" step="0.01" required>
+
+            <br><br>
+            <!-- birthday -->
+            <!-- label -->
+            <label for="">
+                birthday:
+            </label>
+            <!-- input text -->
+            <input type="date" name="myBirthday" id="" value="2000/01/01">
+
+            <br><br>
+            <p>測試radio-選擇想學習的網路語言:</p>
+            <!-- input radio 單選 name 要一樣-->
+            <input type="radio" id="" name="fav_language" value="HTML">
+            <label for="html">HTML</label>
+            <input type="radio" id="" name="fav_language" value="CSS">
+            <label for="css">CSS</label>
+            <input type="radio" id="" name="fav_language" value="JavaScript">
+            <label for="javascript">JavaScript</label><br>
+
+            <br>
+            <p>測試checkbox-選擇餐點：</p>
+            <!-- input checkbox 複選 name [] -->
+            <input type="checkbox" id="" name="myBox1" value="麵">
+            <label for="myBox1"> 麵</label><br>
+            <input type="checkbox" id="" name="myBox2" value="飯">
+            <label for="myBox2"> 飯</label><br>
+            <input type="checkbox" id="" name="myBox3" value="粥">
+            <label for="myBox3"> 粥</label><br>
+            <input type="checkbox" id="" name="myBox4[]" value="壽司">
+            <label for="myBox4"> 壽司</label><br>
+
+
+            <!-- select -->
+            <p>select 下拉選單</p>
+
+            <p>
+                <label for="color">選擇顏色:</label>
+                <select id="color" name="cars">
+                    <option value="紅">紅色</option>
+                    <option value="橙">橘色</option>
+                    <option value="黃">黃色</option>
+                    <option value="綠">綠色</option>
+                    <option value="藍">藍色</option>
+                    <option value="紫">紫色</option>
+                </select>
+            </p>
+
+            <!-- textarea -->
+            <P>textarea 多行文字</p>
+
+            <label for=""></label>
+            <textarea name="myTextarea" id="" cols="50" rows="5"></textarea>
+            </P>
+
+            <br>
+            <!-- input submit-->
+            <input type="submit" value="submit">
 
 
 
 
 
-    </form>
+
+
+        </form>
 
 
 </body>
