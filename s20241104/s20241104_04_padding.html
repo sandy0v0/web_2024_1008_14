@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        * {
+            /* 整體的size＝box-sizing: border-box */
+            /* 如果沒有設border-box，box-sizing預設是content-box */
+            /* ＊代表全部屬性,有設的話,如果有加padding才不會跑版,越加越大 */
+            box-sizing: border-box;
+        }
+
         .box {
             border: 1px solid black;
             margin-top: 50px;
