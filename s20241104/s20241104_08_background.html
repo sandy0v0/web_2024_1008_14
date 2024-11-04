@@ -6,6 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>background</title>
     <style>
+        * {
+            box-sizing: border-box;
+            /* 超過的部分隱藏overflow: hidden，可是會造成滑鼠不能滾動，所以加在box裡面 */
+            /* 乙級 丙級 或者特定大小 可使用*/
+            /* 網頁失去往下滑的能力 */
+            /* overflow: hidden; */
+        }
+
         .box {
             background-image: url('./images/bg.png');
             width: 130px;
@@ -28,6 +36,14 @@
             */
             background-repeat: no-repeat;
             /* 防止背景圖片重複 */
+        }
+
+        .box-img {
+            width: 147px;
+            height: 210px;
+            background-color: lightblue;
+            /* 固定地方隱藏 */
+            overflow: hidden;
         }
 
         .box1 {
@@ -113,6 +129,14 @@
     <h3>box background-喬巴</h3>
     <div class="box"> </div>
 
+    <!-- box-img -->
+    <h3>box img</h3>
+    <div class="box-img">
+        <img src="./images/bg.png" alt="">
+    </div>
+
+
+
     <hr>
     <!-- box background-img -->
     <h3>box background-魯夫</h3>
@@ -137,6 +161,8 @@
     <!-- box background-img -->
     <h3>box background-img</h3>
     <div class="box5"> </div>
+
+
 
 
 </body>
