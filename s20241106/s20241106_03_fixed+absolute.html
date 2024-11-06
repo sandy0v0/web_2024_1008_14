@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>absolute 框框中的框框</title>
+    <style>
+        .fixed-box {
+            position: fixed;
+            right: 0%;
+            bottom: 0%;
+        }
+
+        .green-box {
+            /* 置中 */
+            /* margin: auto; */
+            position: relative;
+            width: 800px;
+            height: 600px;
+            background-color: lightgreen;
+            display: flex;
+            justify-content: center;
+            /* 水平置中 */
+            align-items: center;
+            /* 垂直置中 */
+            text-align: center;
+            /* 文字置中 */
+        }
+
+        .pink-box {
+            position: absolute;
+            right: 5%;
+            bottom: 65%;
+            width: 150px;
+            height: 150px;
+            background-color: lightpink;
+            border-radius: 15px;
+            /* 圓角效果 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .yellow-box {
+            position: absolute;
+            right: 75%;
+            bottom: 65%;
+            width: 150px;
+            height: 150px;
+            background-color: lightyellow;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .skyblue-box {
+            position: absolute;
+            right: 75%;
+            bottom: 10%;
+            width: 150px;
+            height: 150px;
+            background-color: lightskyblue;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .gray-box {
+            position: absolute;
+            right: 5%;
+            bottom: 10%;
+            width: 150px;
+            height: 150px;
+            background-color: lightgray;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="fixed-box">
+        <div class="green-box">
+            <div class="yellow-box">⑉¯ ꇴ ¯⑉</div>
+            <div class="pink-box">(╬☉д⊙) </div>
+            <div class="skyblue-box">ಥ⁠_⁠ಥ</div>
+            <div class="gray-box">⸜(*ˊᗜˋ*)⸝</div>
+        </div>
+    </div>
+</body>
+
+</html>
