@@ -4,11 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>absolute 框框中的框框</title>
     <style>
+        .fixed-box {
+            position: fixed;
+            right: 0%;
+            bottom: 0%;
+        }
+
         .green-box {
             /* 置中 */
-            margin: auto;
+            /* margin: auto; */
             position: relative;
             width: 800px;
             height: 600px;
@@ -27,8 +33,10 @@
 </head>
 
 <body>
-    <div class="green-box">
-        <div class="pink-box">
+    <div class="fixed-box">
+        <div class="green-box">
+            <div class="pink-box">
+            </div>
         </div>
     </div>
 </body>
