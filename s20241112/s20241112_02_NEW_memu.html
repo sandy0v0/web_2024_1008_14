@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            width: 80%;
+            height: 90vh;
+            background-color: lightgoldenrodyellow;
+            border-radius: 20px;
+        }
+
+        .item {
+            display: flex;
+            width: 90%;
+            height: 20vh;
+            background-color: lightpink;
+
+            justify-content: space-around;
+            align-items: center;
+            border-radius: 20px;
+        }
+
+        .item>.box {
+            width: 20%;
+            height: 18vh;
+            background-color: rgb(255, 255, 255, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            /* 防止圖片超出容器範圍 */
+            border-radius: 20px;
+        }
+
+        .box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            /* 保持圖片比例，並將圖片適應到盒子內 */
+        }
+
+        .box.total {
+            color: gray;
+        }
+
+        /* 加入後綴文字 "NT $... 元" */
+        .box.total::before {
+            content: " NT $ ";
+            font-weight: bold;
+            color: gray;
+        }
+
+        /* 為總額加上 "元" */
+        .box.total:last-child::after {
+            font-weight: bold;
+            content: " 元";
+        }
+
+        input[type="number"] {
+            color: gray;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="item">➀
+            <div class="box"><img src="./images/cake6.jpg" alt="pic 1"></div>
+            <div class="box">150</div>
+            <div class="box">2</div>
+            <div class="box total">300</div>
+        </div>
+        <div class="item">➁
+            <div class="box"><img src="./images/cake5.jpg" alt="pic 2"></div>
+            <div class="box">120</div>
+            <div class="box">1
+                <!-- <input width="20PX" type="number" name="" id="" value="111"> -->
+            </div>
+            <div class="box total">120</div>
+        </div>
+        <div class="item">➂
+            <div class="box"><img src="./images/cake4.jpg" alt="pic 3"></div>
+            <div class="box">130</div>
+            <div class="box">1</div>
+            <div class="box total">130</div>
+        </div>
+        <div class="item">➃
+            <div class="box"><img src="./images/cake3.jpg" alt="pic 3"></div>
+            <div class="box">150</div>
+            <div class="box">1</div>
+            <div class="box total">150</div>
+        </div>
+
+    </div>
+</body>
+
+</html>
