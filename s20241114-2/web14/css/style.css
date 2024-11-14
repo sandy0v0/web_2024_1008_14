@@ -8,8 +8,7 @@ header {
     width: 1024px;
     height: 65px;
     background-color: lightblue;
-
-
+    margin: auto;
 }
 
 /* container */
@@ -17,15 +16,32 @@ header {
     width: 1024px;
     height: calc(768px - 65px - 20px);
     background-color: lightpink;
+    margin: auto;
+}
+
+/* container-left */
+aside {
+    width: 215px;
+    height: calc(768px - 65px - 20px);
+    background-color: blueviolet;
+
+    display: flex;
+    flex-direction: column;
 }
 
 
-/* container-left */
+
+
+
 
 
 
 /* container-right */
-
+main {
+    width: calc(1024px - 215px);
+    height: calc(768px - 65px - 20px);
+    background-color: aquamarine;
+}
 
 
 /* footer */
@@ -33,4 +49,5 @@ footer {
     width: 1024px;
     height: 20px;
     background-color: lightsalmon;
+    margin: auto;
 }
