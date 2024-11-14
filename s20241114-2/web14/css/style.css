@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* header */
+header {
+    width: 1024px;
+    height: 65px;
+    background-color: lightblue;
+
+
+}
+
+/* container */
+.container {
+    width: 1024px;
+    height: calc(768px - 65px - 20px);
+    background-color: lightpink;
+}
+
+
+/* container-left */
+
+
+
+/* container-right */
+
+
+
+/* footer */
+footer {
+    width: 1024px;
+    height: 20px;
+    background-color: lightsalmon;
+}
