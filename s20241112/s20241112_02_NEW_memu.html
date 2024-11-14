@@ -6,34 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        .menu {
+            display: flex;
+            width: 70%;
+            height: 2vh;
+            background-color: rgb(250, 230, 230);
+
+            justify-content: space-around;
+            align-items: center;
+            border-radius: 20px;
+            color: gray;
+            font-weight: bold;
+            /* 使文字加粗 */
+            font-size: 20px;
+            margin: auto;
+        }
+
         .container {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
             align-items: center;
-            width: 80%;
+            width: 70%;
             height: 90vh;
             background-color: lightgoldenrodyellow;
             border-radius: 20px;
+            margin: auto;
         }
 
         .item {
             display: flex;
             width: 90%;
             height: 20vh;
-            background-color: lightpink;
+            background-color: rgb(255, 200, 200);
 
             justify-content: space-around;
             align-items: center;
             border-radius: 20px;
+            color: gray;
+            font-weight: bold;
+            /* 使文字加粗 */
+            font-size: 25px;
         }
 
         .item>.box {
             width: 20%;
             height: 18vh;
-            background-color: rgb(255, 255, 255, 0.2);
+            /* background-color: rgb(255, 255, 255, 0.2); */
             display: flex;
-            justify-content: center;
+            justify-content: left;
             align-items: center;
             overflow: hidden;
             /* 防止圖片超出容器範圍 */
@@ -48,57 +69,119 @@
         }
 
         .box.total {
-            color: gray;
+            color: rgb(252, 60, 60);
         }
 
         /* 加入後綴文字 "NT $... 元" */
         .box.total::before {
             content: " NT $ ";
             font-weight: bold;
-            color: gray;
+            color: lightcoral;
         }
 
         /* 為總額加上 "元" */
         .box.total:last-child::after {
             font-weight: bold;
             content: " 元";
+            color: lightcoral;
         }
 
-        input[type="number"] {
-            color: gray;
+        .g-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            color: white;
+            cursor: pointer;
+            /* 指標變為手形 */
+            transition: background-color 0.3s;
+            /* 加入過渡效果 */
+        }
+
+        .btn-cart {
+            background-color: #55aae2;
+        }
+
+        .btn-cart:hover {
+            background-color: #2980b9;
+        }
+
+        /* Form 排版設定，讓總價和按鈕同在一行 */
+        form {
+            display: flex;
+            justify-content: flex-end;
+            /* 將所有元素靠右對齊 */
+            align-items: center;
+            width: 100%;
+        }
+
+        .total-price {
+            margin-right: 20px;
+            /* 給總價一些間隔 */
+            font-weight: bold;
+            color: lightcoral;
         }
     </style>
 
 </head>
 
 <body>
+    <div class="menu">
+        <div>
+            菜單
+        </div>
+    </div>
+    <br>
     <div class="container">
         <div class="item">➀
-            <div class="box"><img src="./images/cake6.jpg" alt="pic 1"></div>
-            <div class="box">150</div>
-            <div class="box">2</div>
-            <div class="box total">300</div>
+            <div class="box"><img src="./images/1.jpg" alt="pic 1"></div>
+            <div class="box">
+                大湖草莓乳酪塔
+                <br>
+                150元/個
+            </div>
+            <div class="box">數量:&nbsp;2</div>
+            <div class="box total"> &nbsp; 300</div>
         </div>
         <div class="item">➁
-            <div class="box"><img src="./images/cake5.jpg" alt="pic 2"></div>
-            <div class="box">120</div>
-            <div class="box">1
-                <!-- <input width="20PX" type="number" name="" id="" value="111"> -->
+            <div class="box"><img src="./images/5.jpg" alt="pic 2"></div>
+            <div class="box">
+                葡萄塔
+                <br>
+                120元/個
             </div>
-            <div class="box total">120</div>
+            <div class="box">數量:&nbsp;1</div>
+            <div class="box total">&nbsp; 120</div>
         </div>
         <div class="item">➂
-            <div class="box"><img src="./images/cake4.jpg" alt="pic 3"></div>
-            <div class="box">130</div>
-            <div class="box">1</div>
-            <div class="box total">130</div>
+            <div class="box"><img src="./images/3.jpg" alt="pic 3"></div>
+            <div class="box">
+                奇異果塔
+                <br>
+                150元/個
+            </div>
+            <div class="box">數量:&nbsp;1</div>
+            <div class="box total">&nbsp; 150</div>
         </div>
         <div class="item">➃
-            <div class="box"><img src="./images/cake3.jpg" alt="pic 3"></div>
-            <div class="box">150</div>
-            <div class="box">1</div>
-            <div class="box total">150</div>
+            <div class="box"><img src="./images/4.jpg" alt="pic 4"></div>
+            <div class="box">
+                巧克力慕斯蛋糕
+                <br>
+                950元/個
+            </div>
+            <div class="box">數量:&nbsp;1</div>
+            <div class="box total">&nbsp; 130</div>
         </div>
+
+    </div>
+    <hr>
+    <form>
+        <input type="button" class="g-btn btn-cart" value="加入購物車">
+
+        <p class="total-price">&nbsp;&nbsp;總價：<span>NT $1,000元&nbsp;&nbsp;&nbsp;</span></p>
+
+    </form>
+
 
     </div>
 </body>
