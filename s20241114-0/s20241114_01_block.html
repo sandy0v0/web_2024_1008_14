@@ -9,7 +9,7 @@
         div {
             /* display: inline; */
             width: 300px;
-            height: 300px;
+            height: 100px;
             background-color: lightblue;
         }
 
@@ -26,19 +26,25 @@
     <h3>inline</h3>
     <p>
         1.不換行 一條線
+        <br>
         2.不能調大小
+        <br>
         ex. a , img
     </p>
 
     <h3>block</h3>
     <p>
-        1.換行
-        2.可以調大小
+        1.換行<br>
+        2.可以調大小<br>
         ex. div
     </p>
 
     <div>
-        div A
+        div A<br>
+        div 本身會換行，<br>
+        如果加上 display: inline，<br>
+        就會失去換行效果，<br>
+        且會失去調大小的功能
     </div>
     <div>
         div B
@@ -47,7 +53,12 @@
         div C
     </div>
 
-    <a href="">link1</a>
+    <a href="">link1<br>
+        A 標籤 本身不會有換行效果<br>
+        如果加上display: block，<br>
+        就會強制換行，<br>
+        且有調大小的功能
+    </a>
     <a href="">link2</a>
     <a href="">link3</a>
 
