@@ -39,7 +39,7 @@ aside {
 .aside-footer {
     width: 100%;
     flex-basis: 25px;
-    background-color: lightblue;
+    background-color: lightgrey;
 }
 
 /* container-right */
