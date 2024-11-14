@@ -8,7 +8,7 @@
     <style>
         .menu {
             display: flex;
-            width: 70%;
+            width: 80%;
             height: 5vh;
             background-color: rgb(250, 230, 230);
 
@@ -27,7 +27,7 @@
             flex-wrap: wrap;
             justify-content: space-around;
             align-items: center;
-            width: 70%;
+            width: 80%;
             height: 90vh;
             background-color: lightgoldenrodyellow;
             border-radius: 20px;
@@ -66,6 +66,8 @@
             height: 100%;
             object-fit: contain;
             /* 保持圖片比例，並將圖片適應到盒子內 */
+            /* object-fit: cover; */
+            /* 使用cover來確保圖片填滿盒子並保持比例 */
         }
 
         .box.total {
@@ -145,7 +147,7 @@
                 <br>
                 150元/個
             </div>
-            <div class="box input">數量：<br>
+            <div class="box input">數量：
                 <input type="number" name="cake" id="cake" value="2">
             </div>
             <div class="box total"> &nbsp; 300</div>
