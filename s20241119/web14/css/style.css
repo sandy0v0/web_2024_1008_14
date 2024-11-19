@@ -3,74 +3,76 @@
     overflow: hidden;
 }
 
-/* header 1*/
 header {
     width: 1024px;
     height: 65px;
-    background-color: lightblue;
+    /* background-color: lightblue; */
     margin: auto;
+    border: 1px solid black;
+    border-bottom: 0;
 }
 
-/* container 2*/
 .container {
     display: flex;
     width: 1024px;
     height: calc(768px - 65px - 20px);
-    background-color: lightpink;
+    /* background-color: lightpink; */
     margin: auto;
 }
 
-/* container-left 3*/
 aside {
     width: 215px;
     height: calc(768px - 65px - 20px);
-    background-color: lightseagreen;
+    /* background-color: lightseagreen; */
 
     display: flex;
     flex-direction: column;
+
 }
 
 .aside-header {
-    /*4*/
     width: 100%;
     height: calc(100% - 25px);
-    background-color: lightpink;
+    /* background-color: lightpink; */
+    border: 1px solid black;
+    border-right: 0;
 }
 
 .aside-footer {
-    /*5*/
     width: 100%;
-    flex-basis: 25px;
-    background-color: lightgrey;
+    height: 25px;
+    /* background-color: lightgray; */
+    border: 1px solid black;
+    border-top: 0;
+    border-right: 0;
 }
 
-/* container-right 6*/
 main {
     width: calc(1024px - 215px);
     height: calc(768px - 65px - 20px);
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
 }
 
 .main-header {
-    /*7*/
     width: 100%;
     height: 29px;
-    background-color: lightgoldenrodyellow;
-
+    /* background-color: lightgoldenrodyellow; */
+    border: 1px solid black;
+    border-bottom: 0;
 }
 
 .main-footer {
-    /*8*/
-    /* margin: auto; */
     width: 100%;
     height: calc(100% - 29px);
-    background-color: rgb(200, 150, 200);
+    /* background-color: rgb(200, 150, 200); */
+    border: 1px solid black;
 }
 
-/* footer 9 */
 footer {
     width: 1024px;
     height: 20px;
-    background-color: lightcoral;
+    /* background-color: lightcoral; */
     margin: auto;
+    border: 1px solid black;
+    border-top: 0;
 }
