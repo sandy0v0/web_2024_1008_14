@@ -142,6 +142,7 @@ footer {
     border-top: 0;
 }
 
+/* 在main-footer裡面包一個iframe */
 iframe {
     width: 100%;
     background-color: lightblue;
