@@ -56,8 +56,11 @@ aside {
 .menu {
     /* 四套件,其實題目沒有規定 */
     display: flex;
+    /* 垂直由上到下排列 */
     flex-direction: column;
+    /* 所有子元素的間距會平均分佈，在容器內[居中排列] */
     justify-content: center;
+    /* 子元素在交叉軸上（垂直方向）居中排列，確保它們在容器內垂直對齊 */
     align-items: center;
     margin-top: 10px;
 }
