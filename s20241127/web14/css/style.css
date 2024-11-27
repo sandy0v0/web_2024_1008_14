@@ -53,7 +53,6 @@ aside {
     padding: 3px;
 }
 
-
 .menu {
     /* 四套件,其實題目沒有規定 */
     display: flex;
@@ -86,6 +85,10 @@ aside {
     border: 1px solid black;
     border-top: 0;
     border-right: 0;
+
+    font-family: '標楷體';
+    color: #000000;
+    text-align: center;
 }
 
 main {
