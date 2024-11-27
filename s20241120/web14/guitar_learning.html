@@ -36,7 +36,7 @@
             /* 文字粗體 */
             font-weight: bold;
             font-size: 18px;
-            color: #0000FF;
+            color: #00FFFF;
             /* 文字斜體 */
             text-align: center;
         }
@@ -50,18 +50,28 @@
         }
 
         .container-content {
+            height: 80vh;
             margin-top: 10px;
             font-family: '標楷體';
-            font-size: 16px;
-            color: #FF0000;
+            font-size: 18px;
+            color: blue;
             text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            /* background-color: lightblue; */
+        }
+
+        .item:hover {
+            background-color: lightblue;
         }
     </style>
 </head>
 
 <body>
     <header class="my-title">
-        吉他社社史
+        吉他社教學內容
     </header>
 
     <nav>
@@ -73,13 +83,13 @@
             </a>
         </div>
         <div class="nav-item">
-            <a href="./guitar_event.html">
-                吉他社近期活動公告
+            <a href="./guitar_history.html">
+                吉他社社史
             </a>
         </div>
         <div class="nav-item">
-            <a href="./guitar_learning.html">
-                吉他社教學內容
+            <a href="./guitar_event.html">
+                吉他社近期活動公告
             </a>
         </div>
     </nav>
@@ -88,16 +98,16 @@
     <!-- 先點UTF-8 然後選 以編碼重新開啟>打big5，讓亂碼改成文字 -->
     <div class="container-content">
 
-        基礎樂理<br>
-        常用之吉他技巧<br>
-        音程介紹以及音程表內容<br>
-        節奏型態<br>
-        和絃及級數和絃<br>
-        和絃公式<br>
-        轉位複合<br>
-        調音法<br>
-        吉他的保養<br>
-        如何轉調<br>
+        <div class="item"><u>基礎樂理</u></div>
+        <div class="item"><u>常用之吉他技巧</u></div>
+        <div class="item"><u>音程介紹以及音程表內容</u></div>
+        <div class="item"><u>節奏型態</u></div>
+        <div class="item"><u>和絃及級數和絃</u></div>
+        <div class="item"><u>和絃公式</u></div>
+        <div class="item"><u>轉位複合</u></div>
+        <div class="item"><u>調音法</u></div>
+        <div class="item"><u>吉他的保養</u></div>
+        <div class="item"><u>如何轉調</u></div>
     </div>
 
 </body>
