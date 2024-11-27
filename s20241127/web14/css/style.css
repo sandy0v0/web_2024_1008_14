@@ -38,6 +38,45 @@ aside {
     /* background-color: lightgray; */
     border: 1px solid black;
     border-right: 0;
+
+    font-family: '標楷體';
+    /* 文字粗細 */
+    font-weight: 500;
+    font-size: 24px;
+    text-align: center;
+    color: #FF00FF;
+    padding: 10px;
+}
+
+.aside-title {
+    border-bottom: 1px solid black;
+    padding: 3px;
+}
+
+
+.menu {
+    /* 四套件,其實題目沒有規定 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.menu-item {
+    width: 200px;
+    height: 35px;
+    background-color: lightblue;
+    margin-top: 5px;
+    background-image: url(./../images/menu1.png);
+    border-radius: 20px;
+    padding-top: 8px;
+    color: #000000;
+    font-size: 16px;
+}
+
+.menu-item:hover {
+    background-image: url(./../images/menu2.png);
 }
 
 .aside-footer {
