@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>旅遊景點</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <style>
         #container {
             display: flex;
@@ -101,7 +104,7 @@
 
     <script>
         $(document).ready(function () {
-            // 設定變數
+            // 初始點擊計數
             let count1 = 0, count2 = 0, count3 = 0;
 
             // 獲取每個box和價格顯示區域
@@ -112,11 +115,11 @@
             // let price2 = document.getElementById('price2');
             // let price3 = document.getElementById('price3');
 
-            // 設定事件處理函數
-            function changeColorOnClick(box, counter, priceElement, price) {
-                box.on('click', function () {
+            // 設定事件處理函數：點擊
+            function changeColorOnClick($box, counter, $priceElement, originalPrice) {
+                $box.on('click', function () {
                     console.log(`Box ${counter} clicked`);
-                    box.toggleclass('bg-pink');
+                    $box.toggleClass('bg-pink');
 
                     // 更新點擊計數
                     if (counter === 1) count1++;
@@ -125,32 +128,32 @@
 
                     console.log(`Box ${counter} click count:`, counter === 1 ? count1 : counter === 2 ? count2 : count3);
 
-                    // 當點擊框框時，將價格修改為新的數字
+                    // 計算優惠價格 // 當點擊框框時，將價格修改為新的數字
                     let newPrice = originalPrice - 1000;
-                    priceElement.html = `優惠價 $${newPrice}元`; // 修改價格
+                    $priceElement.html(`優惠價 $${newPrice}元`); // 修改價格
 
-                    // 當價格變更時，應用新的樣式 (顏色 + 字體大小)
-                    priceElement.addclass.add('price-updated');
+                    // 當價格變更時，應用新的樣式 (顏色 + 字體大小 + 放大效果)
+                    $priceElement.addClass('price-updated');
 
                     // 延時後移除 price-updated 樣式 (讓動畫顯示效果)
                     setTimeout(function () {
-                        priceElement.removeClass('price-updated');
+                        $priceElement.removeClass('price-updated');
                     }, 1000); // 在 1 秒後恢復原來的樣式
                 });
             }
 
             // 設定事件處理函數：滑鼠進入
             function changeColorOnMouseEnter($box) {
-                box.on('mouseenter', function () {
-                    box.addClass('bg-green');
+                $box.on('mouseenter', function () {
+                    $box.addClass('bg-green');
                 });
             }
 
             // 設定事件處理函數：滑鼠離開
             function changeColorOnMouseLeave($box) {
-                box.on('mouseleave', function () {
-                    box.removeClass('bg-green');
-                    box.addClass.add('bg-blue');
+                $box.on('mouseleave', function () {
+                    $box.removeClass('bg-green');
+                    $box.addClass.add('bg-blue');
                 });
             }
 
