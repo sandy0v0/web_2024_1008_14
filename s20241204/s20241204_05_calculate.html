@@ -165,9 +165,13 @@
                 let x10Result = x10Fun(calResult);
 
                 // 6.show result 重構，在function上按F12會自動跳到建立Function的地方
-                showResult(num1Value, num2Value, optValue, calResult, x10Result);
+                // 這個是馬上顯示結果
+                // showResult(num1Value, num2Value, optValue, calResult, x10Result);
 
-
+                // 這個是5秒後顯示結果
+                setTimeout(function () {
+                    showResult(num1Value, num2Value, optValue, calResult, x10Result);
+                }, 3000)
 
             });
 
