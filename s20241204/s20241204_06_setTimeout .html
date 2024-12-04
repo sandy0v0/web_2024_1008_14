@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            /* 讓框框可以自動下去 */
+            flex-wrap: wrap;
+            justify-content: space-around;
+            width: 80%;
+            margin: auto;
+
+        }
+
+        .box {
+            border: 2px;
+            width: 300px;
+            height: 300px;
+            background-color: lightblue;
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <p>
+                請輸入文字：
+                <input type="text" name="" id="myText">
+            </p>
+
+            <p>
+                請輸入秒數：
+                <input type="number" name="" id="waitTime">
+            </p>
+
+            <p>
+                <button type="button" id="myBtn">╰(*°▽°*)╯ 執行 myBtn</button>
+            </p>
+
+            <p>
+                <span id="box1Span"></span>
+            </p>
+        </div>
+        <div class="box">
+            (๑¯◡¯๑) Say 啥咪 ?
+            <p>
+                <span id="box2Span"></span>
+            </p>
+        </div>
+        <!-- <div class="box">
+            ʕ•ᴥ•ʔ 運算結果( sum x 10 )= ?
+            <p>
+                <span id="box3Span"></span>
+            </p> 
+        </div>-->
+    </div>
+
+    <!-- 一開始要先去官網打上　https://cdnjs.com/libraries/jquery　 -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function () {
+
+            // 1. bind 先綁定
+            // 2. 快捷鍵 Alt+滑鼠點選，ctrl+d 全選，ctrl+v 貼上
+            const myText = $('#myText');
+            const waitTime = $('#waitTime');
+            const myBtn = $('#myBtn');
+            const box1Span = $('#box1Span');
+            const box2Span = $('#box2Span');
+
+            // timer，如果沒有輸入這個let
+            let myInterval;
+
+            // 2.action
+            // 時間都要顯示毫秒，所以5秒要*1000
+            // 這個是5秒後顯示結果
+            myBtn.click(function () {
+
+                clearInterval(myInterval);
+                console.log('myBtn ok ');
+
+                let getTextValue = myText.val();
+                let getTimeValue = Number(waitTime.val()) * 1000;
+                console.log('getTextValue', getTextValue);
+                console.log('getTextValue typeof', typeof (getTextValue));
+                console.log('getTimeValue', getTimeValue);
+                console.log('getTimeValue typeof', typeof (getTimeValue));
+
+                // setTimeout 只能做"一次"
+                // setTimeout(function () {
+                //     console.log(`my text is ${getTextValue}`);
+                //     box1Span.text(getTextValue);
+                //     box2Span.text(getTextValue);
+
+                // }, getTimeValue)
+
+
+                // setInterval 可以做"無限次"
+                // 讓文字有閃爍的感覺可以在setInterval加上setTimeout
+
+                // setInterval(function () {
+                myInterval = setInterval(function () {
+                    console.log(`my text is ${getTextValue}`);
+                    box1Span.text(getTextValue);
+                    box2Span.text(getTextValue);
+
+                    setTimeout(function () {
+                        box1Span.text('');
+                        box2Span.text('');
+                    }, 500);
+                }, getTimeValue);
+
+
+            });
+
+
+        });
+    </script>
+</body>
+
+</html>
