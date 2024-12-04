@@ -13,6 +13,7 @@
         .container {
             display: flex;
             flex-direction: row;
+            /* 讓框框可以自動下去 */
             flex-wrap: wrap;
             justify-content: space-around;
             width: 80%;
@@ -59,7 +60,7 @@
         </div>
     </div>
 
-
+    <!-- 一開始要先去官網打上　https://cdnjs.com/libraries/jquery　 -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
@@ -80,7 +81,7 @@
                 // 2.get num2
                 // 3.sum = num1 + num2
 
-                // 1.get num1
+                // 1.get num1 (typeof這個代表把字串轉型成為數字，在Console顯示，黑色是字串，藍色是數字)
                 let num1Value = Number(num1.val());
                 console.log('num1Value', num1Value);
                 console.log('num1Value typeof', typeof (num1Value));
