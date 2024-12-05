@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Ajax API 練習</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <h1>PHP Ajax API 範例</h1>
+
+    <button id="fetchDataBtn">取得 API 資料</button>
+
+    <div id="result"></div>
+
+    <script>
+        // 當按下按鈕時，發送 Ajax 請求
+        $("#fetchDataBtn").click(function () {
+            $.ajax({
+                url: 'api.php',  // 發送請求的 URL
+                type: 'GET',  // 請求方法
+                dataType: 'json',  // 預期回應的資料格式是 JSON
+                success: function (response) {
+                    // 當成功取得回應時，顯示結果
+                    $("#result").html(
+                        "<p>狀態: " + response.status + "</p>" +
+                        "<p>訊息: " + response.message + "</p>" +
+                        "<p>時間戳: " + response.timestamp + "</p>"
+                    );
+                },
+                error: function (xhr, status, error) {
+                    // 當請求失敗時顯示錯誤訊息
+                    $("#result").html("<p>錯誤: " + error + "</p>");
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
