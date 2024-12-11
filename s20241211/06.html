@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crystal Bracelet Shop</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        body {
+            background-color: rgb(243, 244, 245);
+        }
+
+        .title {
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            margin-top: 0;
+            background-color: #e2e0e0;
+            position: fixed;
+            top: 0;
+            opacity: 0.8;
+        }
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 90%;
+            margin: auto;
+            margin-top: 70px;
+        }
+
+        td,
+        th {
+            padding: 8px;
+            text-align: center;
+        }
+
+        .text-red {
+            color: red;
+            font-size: 18px;
+        }
+
+        img {
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            box-shadow: 2px 2px 4px rgba(177, 177, 177, 0.5);
+            border-radius: 4px;
+        }
+
+        input[type="number"] {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="title">
+        <h2>Crystal Bracelet Shop</h2>
+    </div>
+
+    <table>
+        <tr>
+            <th width="20%"></th>
+            <th width="44%"></th>
+            <th width="12%">單價</th>
+            <th width="12%">購買數量</th>
+            <th width="12%">金額小計</th>
+        </tr>
+        <tr>
+            <td>
+                <img src="https://shoplineimg.com/62fdcbb86ae00e0056fc84f0/666eb04f87d179000dd30d1e/800x.webp?source_format=jpg"
+                    alt="" srcset="">
+            </td>
+            <td>
+                <p style="font-weight: bold;font-size: 18px;margin-bottom:30px;">
+                    不要無所謂
+                </p>
+                <p>
+                    金字塔黃水晶 / 畢卡索石 / 紅銅髮 / 綠碧髮 / 閃靈鑽
+                </p>
+            </td>
+            <td>
+                <!-- 可以在元素內藏資料 -->
+                <p id="price1" data-price="1980">
+                    1980 元
+                </p>
+            </td>
+            <td>
+                <input type="number" name="" id="input1" value="0" max="10" min="0">
+            </td>
+            <td>
+                <p id="total1">
+                    0
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img src="https://shoplineimg.com/62fdcbb86ae00e0056fc84f0/63c675a6173bc900119db138/800x.webp?source_format=jpg"
+                    alt="" srcset="">
+            </td>
+            <td>
+                <p style="font-weight: bold;font-size: 18px;margin-bottom:30px;">
+                    Sunset
+                </p>
+
+                <p>
+                    紅膠花 / 薔薇黃金 / 黃水晶 / 金草莓 / 紅石榴 / 紫牙烏
+                </p>
+            </td>
+            <td>
+                <!-- 可以在元素內藏資料 -->
+                <p id="price2" data-price="2280">
+                    2280 元
+                </p>
+            </td>
+            <td>
+                <input type="number" name="" id="input2" value="0" max="10" min="0">
+            </td>
+            <td>
+                <p id="total2">
+                    0
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img src="https://shoplineimg.com/62fdcbb86ae00e0056fc84f0/64552dfa164356001492b811/800x.webp?source_format=jpeg"
+                    alt="" srcset="">
+            </td>
+            <td>
+                <p style="font-weight: bold;font-size: 18px;margin-bottom:30px;">
+                    落寞之歌
+                </p>
+
+                <p>
+                    紫東陵 / 灰月光 / 拉長石 / 石榴石 / 灰瑪瑙
+                </p>
+            </td>
+            <td>
+                <!-- 可以在元素內藏資料 -->
+                <p id="price3" data-price="2380">
+                    2380 元
+                </p>
+            </td>
+            <td>
+                <input type="number" name="" id="input3" value="0" max="10" min="0">
+            </td>
+            <td>
+                <p id="total3">
+                    0
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img src="https://shoplineimg.com/62fdcbb86ae00e0056fc84f0/666eb21bb4e0b2000d69b54c/800x.webp?source_format=jpg"
+                    alt="" srcset="">
+            </td>
+            <td>
+                <p style="font-weight: bold;font-size: 18px;margin-bottom:30px;">
+                    代價
+                </p>
+
+                <p>
+                    極光23 / 銀超七 / 紫水晶 / 超七 / 紅銅鈦
+                </p>
+            </td>
+            <td>
+                <!-- 可以在元素內藏資料 -->
+                <p id="price4" data-price="2580">
+                    2580 元
+                </p>
+            </td>
+            <td>
+                <input type="number" name="" id="input4" value="0" max="10" min="0">
+            </td>
+            <td>
+                <p id="total4">
+                    0
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4" height="100px">
+                <p style="font-weight: bold;font-size: 18px;text-align: right;">
+                    總金額
+                </p>
+                <p style="text-align: right;">
+                    (滿 5000 元享75折優惠)
+                </p>
+            </td>
+            <td>
+                <p id="sumResult">
+                    0 元
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // function 計算
+            // get all Result => sum
+            function getSum(data) {
+                let getTotal1Value = Number(total1.text());
+                let getTotal2Value = Number(total2.text());
+                let getTotal3Value = Number(total3.text());
+                let getTotal4Value = Number(total4.text());
+
+                let sum = getTotal1Value + getTotal2Value + getTotal3Value + getTotal4Value;
+                console.log('getSum', sum);
+
+
+                // > 5000 元打75折
+                // 其他 原價
+                // 重構後寫法
+                if (sum >= 5000) {
+                    sum = sum * 0.75;
+                    sumResult.attr('class', 'text-red');
+                } else {
+                    sumResult.attr('class', '');
+                    // sumResult.removeClass('text-red');
+                }
+                let resultString = `${sum} 元`;
+                sumResult.text(resultString);
+            }
+
+            // 1.bind
+            const price1 = $('#price1');
+            const input1 = $('#input1');
+            const total1 = $('#total1');
+
+            const price2 = $('#price2');
+            const input2 = $('#input2');
+            const total2 = $('#total2');
+
+            const price3 = $('#price3');
+            const input3 = $('#input3');
+            const total3 = $('#total3');
+
+            const price4 = $('#price4');
+            const input4 = $('#input4');
+            const total4 = $('#total4');
+
+            const sumResult = $('#sumResult');
+            let sum = 0;
+
+            // 2.action
+            input1.change(function (e) {
+                console.log('change ok');
+                // attr() 用來獲取或設置元素（如 <div>、<span> 等）的屬性
+                let getPrice1Value = Number(price1.attr('data-price'));
+                // val() 用來獲取或設置表單元素（如 <input>、<textarea>、<select>）的值
+                let getInput1Value = Number(input1.val());
+                let result1 = getPrice1Value * getInput1Value;
+                console.log(getPrice1Value);
+                console.log(getInput1Value);
+                console.log(result1);
+                total1.text(result1);
+
+                getSum();
+
+            })
+
+            input2.change(function (e) {
+                console.log('change ok');
+                let getPrice2Value = Number(price2.attr('data-price'));
+                let getInput2Value = Number(input2.val());
+                let result2 = getPrice2Value * getInput2Value;
+                console.log(getPrice2Value);
+                console.log(getInput2Value);
+                console.log(result2);
+                total2.text(result2);
+
+                getSum();
+
+            });
+
+            input3.change(function (e) {
+                console.log('change ok');
+                let getPrice3Value = Number(price3.attr('data-price'));
+                let getInput3Value = Number(input3.val());
+                let result3 = getPrice3Value * getInput3Value;
+                console.log(getPrice3Value);
+                console.log(getInput3Value);
+                console.log(result3);
+                total3.text(result3);
+
+                getSum();
+
+            });
+
+            input4.change(function (e) {
+                console.log('change ok');
+                let getPrice4Value = Number(price4.attr('data-price'));
+                let getInput4Value = Number(input4.val());
+                let result4 = getPrice4Value * getInput4Value;
+                console.log(getPrice4Value);
+                console.log(getInput4Value);
+                console.log(result4);
+                total4.text(result4);
+
+                getSum();
+
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>
