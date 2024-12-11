@@ -47,7 +47,7 @@
                 <p>
                     大湖草莓乳酪塔
                 </p>
-                <p id="price1" data-price="200">
+                <p id="price1" data-price="150">
                     150元/個
                 </p>
                 <p>
@@ -67,14 +67,14 @@
 
         <tr>
             <td>
-                <img src="https://picsum.photos/id/22/180/160" alt="" srcset="">
+                <img src="./images/5.jpg" style="width: 90%; height: 90%;" alt="" srcset="">
             </td>
             <td>
                 <p>
-                    咖啡
+                    葡萄塔
                 </p>
-                <p id="price2" data-price="100">
-                    100元
+                <p id="price2" data-price="120">
+                    120元/個
                 </p>
                 <p>
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore, quidem.
@@ -142,6 +142,23 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         $(document).ready(function () {
+            // function
+            // get all Result => sum
+            function getSum() {
+                let getTotal1Value = Number(total1.text());
+                let getTotal2Value = Number(total2.text());
+                let getTotal3Value = Number(total3.text());
+                console.log('getTotal1Value', getTotal1Value);
+                console.log('getTotal2Value', getTotal2Value);
+                console.log('getTotal3Value', getTotal3Value);
+
+                let sum = getTotal1Value + getTotal2Value + getTotal3Value;
+                console.log('getSum', sum);
+                let resultString = `${sum} 元`;
+                sumResult.text(resultString);
+
+            }
+
             // 1.bind
             const price1 = $('#price1');
             const input1 = $('#input1');
@@ -170,13 +187,7 @@
                 console.log(result1);
                 total1.text(result1);
 
-                // 
-                sum = sum + result1;
-                console.log('sum', sum);
-                let resultString = `${sum} 元`;
-                sumResult.text(resultString);
-
-
+                getSum();
             });
 
             input2.change(function (e) {
@@ -189,10 +200,7 @@
                 console.log(result2);
                 total2.text(result2);
 
-                sum = sum + result2;
-                console.log('sum', sum);
-                let resultString = `${sum} 元`;
-                sumResult.text(resultString);
+                getSum();
 
             });
 
@@ -206,10 +214,7 @@
                 console.log(result3);
                 total3.text(result3);
 
-                sum = sum + result3;
-                console.log('sum', sum);
-                let resultString = `${sum} 元`;
-                sumResult.text(resultString);
+                getSum();
 
             });
 
