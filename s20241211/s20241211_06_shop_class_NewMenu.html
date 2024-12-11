@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Christmas gift shop</title>
+    <title>Christmas Music Toy Shop</title>
     <style>
         * {
             box-sizing: border-box;
@@ -30,7 +30,6 @@
             margin: 0 auto;
             /* 保證內容居中 */
             padding-top: 20px;
-            /* 給內容一點上邊距 */
         }
 
         h2 {
@@ -71,8 +70,16 @@
         }
 
         tr {
-            height: 50px;
-            /* 強制每行的高度相同，您可以根據需要調整此值 */
+            height: 55px;
+        }
+
+        .product{
+            color: lightgray;
+            font-size: 15px;
+        }
+
+        .specialDiscount{
+            color: lightcoral;
         }
 
         .text-red {
@@ -87,7 +94,7 @@
             border-radius: 10%;
         }
 
-        .right-image img { /*最右邊 小圖區 */
+        .left-image img { 
         width: 200px; 
         height: 200px; 
         position: fixed; 
@@ -98,7 +105,6 @@
         input {
             font-size: 18px;
             width: 50%;
-            /* 限制輸入框寬度以防止過大 */
             padding: 5px;
             box-sizing: border-box;
             text-align: center;
@@ -109,30 +115,11 @@
             font-weight: bold;
         }
 
-        @media print {
-            body {
-                margin: 0;
-                padding: 0;
-            }
-
-            table {
-                width: 100%;
-                height: 100%;
-            }
-
-            tr,
-            td,
-            th {
-                height: auto;
-                page-break-inside: avoid;
-                /* 防止行分開 */
-            }
-        }
     </style>
 </head>
 
 <body>
-    <h2>⋆*☪⋆*̣̥☆·͙̥‧❄‧̩̥ ⛄Christmas gift shop🎄‧̩̥❅·✩·͙̥⋆*☪*̣̥⋆</h2>
+    <h2>⋆ * ☪ ⋆ *̣̥ ☆ ·͙̥ ‧ ❄ ‧̩̥ ⛄ Christmas Music Toy Shop 🎄 ‧̩̥ ❅ · ✩ ·͙̥ ⋆ ☪ *̣̥ ⋆</h2>
     
     <table>
         <tr>
@@ -153,7 +140,7 @@
                     <b>⭐ 聖誕柴犬 - 聖誕特別款 ⭐</b>
                 </p>
                 <br>
-                <p>
+                <p class="product">
                     柴犬布偶 / 娃娃公仔 / 毛絨玩偶 / 聖誕禮物
                 </p>
             </td>
@@ -163,7 +150,7 @@
                 </p>
             </td>
             <td>
-                <input class="inputClass" type="number" name="" id="input1" value="0" max="10" min="0">
+                <input class="inputClass" type="number" name="" id="input1" value="0" max="30" min="0">
             </td>
             <td>
                 <p class="totalClass" id="total1">
@@ -181,7 +168,7 @@
                     <b>⭐聖誕老公公 / 雪人 / 麋鹿 - 聖誕基本款⭐</b>
                 </p>
                 <br>
-                <p>
+                <p class="product">
                     聖誕節玩偶組 (聖誕老公公 / 雪人 / 麋鹿) 
                 </p>
             </td>
@@ -191,7 +178,7 @@
                 </p>
             </td>
             <td>
-                <input class="inputClass" type="number" name="" id="input2" value="0" max="10" min="0">
+                <input class="inputClass" type="number" name="" id="input2" value="0" max="30" min="0">
             </td>
             <td>
                 <p class="totalClass" id="total2">
@@ -209,7 +196,7 @@
                     <b>⭐ 吉伊卡哇 - 聖誕系列 ⭐</b>
                 </p>   
                 <br>            
-                <p>
+                <p class="product">
                     日本 Chiikawa 吉伊卡哇 聖誕節禮品
                 </p>
             </td>
@@ -237,7 +224,7 @@
                     <b>⭐ 角落小夥伴 - 聖誕系列 ⭐</b>
                 </p>
                 <br>
-                <p>
+                <p class="product">
                     角落小夥伴 聖誕節絨毛玩偶 / 聖誕禮物
                 </p>
             </td>
@@ -257,14 +244,16 @@
         </tr>
 
         <tr>
-            <td colspan="3">
-                <b>🎅 總計金額為 </b>
-            </td>
-            <!-- <td>
+            <td colspan="3" class="specialDiscount">
+                <b>🔔 歡慶佳節限時折扣： 🦌 滿 800 元 打 8 折 🛷 滿千送神祕小禮 ~【 數量有限，送完為止 】</b>
             </td>
             <td>
+                <b>🎅 總計金額 </b>
+            </td>
+            <!-- 
+            <td>
             </td> -->
-            <td colspan="2">
+            <td>
                 <p id="sumResult">
                    🎁 0 元
                 </p>
@@ -274,8 +263,8 @@
 
     </table>
 
-    <div class="right-image">
-        <img src="./images/right-image.png" alt="右圖1" />
+    <div class="left-image">
+        <img src="./images/left-image.png" alt="右圖1" />
     </div>
 
 
