@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-image: url('./images/bg1.jpg');
+            /*設定背景圖片*/
+            background-size: 100%;
+            /*使圖片覆蓋整個背景*/
+            background-color: rgba(255, 255, 255, 0.9);
+            /* 增加日曆的白色半透明背景 */
+
+        }
+
+        .container {
+            text-align: center;
+            /* 讓所有文本居中 */
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            /* 保證內容居中 */
+            padding-top: 20px;
+            /* 給內容一點上邊距 */
+        }
+
+        h2 {
+            margin: 0;
+            /* 清除h2的預設外邊距 */
+            font-size: 36px;
+            /* 調整標題字體大小 */
+            font-weight: bold;
+            margin-bottom: 20px;
+            /* 標題與內容的間距 */
+        }
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 70%;
+            table-layout: fixed;
+            /* 強制表格維持固定寬度 */
+            height: 100%;
+            /* 使表格可以適應頁面高度 */
+            margin: 0 auto;
+            /* 保證表格居中 */
+            background-color: rgba(255, 255, 255, 0.9);
+            /* 增加日曆的白色半透明背景 */
+        }
+
+        td,
+        th {
+            border: 1px solid lightgrey;
+            padding: 8px;
+            text-align: center;
+            vertical-align: middle;
+            /* 讓內容在格子內垂直置中 */
+
+        }
+
+        tr:nth-child(even) {
+            /* background-color: #dddddd; */
+            /* background-color: rgb(250, 240, 255); */
+        }
+
+        tr {
+            height: 60px;
+            /* 強制每行的高度相同，您可以根據需要調整此值 */
+        }
+
+        .text-red {
+            color: red;
+            font-size: 30px;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            /* 保持圖片比例 */
+            object-fit: contain;
+        }
+
+        input {
+            width: 80%;
+            /* 限制輸入框寬度以防止過大 */
+            padding: 5px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        #sumResult {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            table {
+                width: 100%;
+                height: 100%;
+            }
+
+            tr,
+            td,
+            th {
+                height: auto;
+                page-break-inside: avoid;
+                /* 防止行分開 */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h2>SHOP</h2>
+
+    <table>
+        <tr>
+            <!-- <th>id</th> -->
+            <th width="20%">產品示意圖</th>
+            <th width="30%">產品介紹</th>
+            <th width="15%">數量</th>
+            <th width="15%">小計</th>
+        </tr>
+
+        <tr>
+            <td>
+                <img src="./images/1.png" alt="" srcset="">
+            </td>
+            <td>
+                <p>
+                    聖誕柴犬
+                </p>
+                <p class="priceClass" id="price1" data-price="200">
+                    200元/個
+                </p>
+                <p>
+                    可愛柴犬布偶.娃娃.公仔玩偶.毛絨玩具.聖誕禮物
+                </p>
+
+            </td>
+            <td>
+                <input class="inputClass" type="number" name="" id="input1" value="0" max="10" min="0">
+            </td>
+            <td>
+                <p class="totalClass" id="total1">
+                    0
+                </p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <img src="./images/2.png" alt="" srcset="">
+            </td>
+            <td>
+                <p>
+                    聖誕老公公/雪人/麋鹿 - 聖誕基本款
+                </p>
+                <p class="priceClass" id="price2" data-price="600">
+                    600元/組
+                </p>
+                <p>
+                    聖誕節玩偶組(聖誕老公公/雪人/麋鹿) ★ 聖誕禮物
+                </p>
+
+            </td>
+            <td>
+                <input class="inputClass" type="number" name="" id="input2" value="0" max="10" min="0">
+            </td>
+            <td>
+                <p class="totalClass" id="total2">
+                    0
+                </p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <img src="./images/3.png" alt="" srcset="">
+            </td>
+            <td>
+                <p>
+                    吉伊卡哇 - 聖誕系列
+                </p>
+                <p class="priceClass" id="price3" data-price="1000">
+                    1000元/組
+                </p>
+                <p>
+                    日本 Chiikawa 吉伊卡哇 聖誕節禮品
+                </p>
+
+            </td>
+            <td>
+                <input class="inputClass" type="number" name="" id="input3" value="0" max="10" min="0">
+            </td>
+            <td>
+                <p class="totalClass" id="total3">
+                    0
+                </p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <img src="./images/4.png" alt="" srcset="">
+            </td>
+            <td>
+                <p>
+                    角角落生物 - 聖誕系列
+                </p>
+                <p class="priceClass" id="price3" data-price="1500">
+                    1500元/組
+                </p>
+                <p>
+                    角角落生物.聖誕節絨毛玩偶 ★ 聖誕禮物
+                </p>
+
+            </td>
+            <td>
+                <input class="inputClass" type="number" name="" id="input3" value="0" max="10" min="0">
+            </td>
+            <td>
+                <p class="totalClass" id="total3">
+                    0
+                </p>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="3">
+                總共金額為
+            </td>
+            <!-- <td>
+            </td>
+            <td>
+            </td> -->
+            <td>
+                <p id="sumResult">
+                    0 元
+                </p>
+
+            </td>
+        </tr>
+
+    </table>
+
+    <hr>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function () {
+            // function
+            // get all Result => sum
+            function getSum() {
+
+                let sum = 0;
+                totalClass.each(function (index, element) {
+                    console.log('index', index);
+                    console.log('element', element);
+                    console.log('this', this);
+
+                    let getTotalValue = Number($(this).text());
+                    sum = sum + getTotalValue;
+
+                });
+
+                // 重構
+                if (sum >= 200) {
+                    sum = sum * 0.8;
+                    sumResult.attr('class', 'text-red');
+                } else {
+                    sumResult.attr('class', '');
+                    // sumResult.removeClass('text-red');
+                }
+
+                let resultString = `${sum} 元`;
+                sumResult.text(resultString);
+
+            }
+
+            // 1.bind
+            const price1 = $('#price1');
+            const input1 = $('#input1');
+            const total1 = $('#total1');
+
+            const priceClass = $('.priceClass');
+            const inputClass = $('.inputClass');
+            const totalClass = $('.totalClass');
+
+            console.log('priceClass', priceClass);
+            console.log('inputClass', inputClass);
+            console.log('totalClass', totalClass);
+
+
+
+            const sumResult = $('#sumResult');
+            let sum = 0;
+
+
+            // 2.action
+            $.each(inputClass, function (indexInArray, valueOfElement) {
+                $(this).change(function (e) {
+                    console.log('chaneg ok');
+
+                    // now ?
+                    console.log('now $(this)', $(this));
+
+                    // parent() tr
+                    myParent = $(this).parent().parent();
+                    console.log('myParent', myParent);
+
+                    // find() .class
+                    myPrice = myParent.find('.priceClass').attr('data-price');
+                    console.log('myPrice', myPrice);
+
+                    myTotal = myParent.find('.totalClass');
+
+
+                    let getPriceValue = Number(myPrice);
+                    let getInputValue = Number($(this).val());
+                    let result = getPriceValue * getInputValue;
+                    console.log(getPriceValue);
+                    console.log(getInputValue);
+                    console.log(result);
+                    myTotal.text(result);
+
+                    getSum();
+                });
+
+
+            });
+        });
+    </script>
+</body>
+
+</html>
