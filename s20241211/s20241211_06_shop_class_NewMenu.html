@@ -4,26 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Christmas gift shop</title>
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+        }
+
         body {
             text-align: center;
-            margin: 0;
             padding: 0;
-            height: 100%;
-            background-image: url('./images/bg1.jpg');
-            /*設定背景圖片*/
-            background-size: 100%;
-            /*使圖片覆蓋整個背景*/
-            background-color: rgba(255, 255, 255, 0.9);
-            /* 增加日曆的白色半透明背景 */
-
+            /* height: 100%; */
+            background-image: url('./images/bg9.png');
+            background-size: cover;
+            background-repeat: no-repeat; /* 不重複顯示背景圖片 */
+            background-attachment: fixed; /* 固定背景圖不隨捲動 */
+            font-family: Arial, sans-serif;
         }
 
         .container {
             text-align: center;
             /* 讓所有文本居中 */
-            width: 90%;
+            width: 85%;
             max-width: 1200px;
             margin: 0 auto;
             /* 保證內容居中 */
@@ -32,34 +34,32 @@
         }
 
         h2 {
-            margin: 0;
-            /* 清除h2的預設外邊距 */
-            font-size: 36px;
-            /* 調整標題字體大小 */
+            font-size: 35px;
             font-weight: bold;
-            margin-bottom: 20px;
-            /* 標題與內容的間距 */
+            margin: 30px;
+            color: burlywood;
         }
 
         table {
             font-family: arial, sans-serif;
             border-collapse: collapse;
-            width: 70%;
+            font-size: 18px;
+            width: 60%;
             table-layout: fixed;
             /* 強制表格維持固定寬度 */
-            height: 100%;
+            height: 80%;
             /* 使表格可以適應頁面高度 */
             margin: 0 auto;
             /* 保證表格居中 */
-            background-color: rgba(255, 255, 255, 0.6);
-            /* 增加日曆的白色半透明背景 */
+            /* background-color: rgba(255, 255, 255, 0.6); */
         }
 
         td,
         th {
-            border: 1px solid lightgrey;
+            border-bottom: 1px solid lightgrey;
             padding: 8px;
             text-align: center;
+            color: floralwhite;
             vertical-align: middle;
             /* 讓內容在格子內垂直置中 */
 
@@ -67,11 +67,11 @@
 
         tr:nth-child(even) {
             /* background-color: #dddddd; */
-            /* background-color: rgb(250, 240, 255); */
+            background-color: rgb(250, 240, 255, 0.1);
         }
 
         tr {
-            height: 60px;
+            height: 50px;
             /* 強制每行的高度相同，您可以根據需要調整此值 */
         }
 
@@ -81,14 +81,23 @@
         }
 
         img {
-            width: 100%;
-            height: auto;
-            /* 保持圖片比例 */
+            width: 65%;
+            height: 65%;
             object-fit: contain;
+            border-radius: 10%;
+        }
+
+        .right-image img { /*最右邊 小圖區 */
+        width: 200px; 
+        height: 200px; 
+        position: fixed; 
+        bottom: -10px;  
+        left: 10px; 
         }
 
         input {
-            width: 80%;
+            font-size: 18px;
+            width: 50%;
             /* 限制輸入框寬度以防止過大 */
             padding: 5px;
             box-sizing: border-box;
@@ -123,16 +132,17 @@
 </head>
 
 <body>
-    <h2>SHOP</h2>
-
+    <h2>⋆*☪⋆*̣̥☆·͙̥‧❄‧̩̥ ⛄Christmas gift shop🎄‧̩̥❅·✩·͙̥⋆*☪*̣̥⋆</h2>
+    
     <table>
         <tr>
             <!-- <th>id</th> -->
             <th width="20%">產品示意圖</th>
             <th width="30%">產品介紹</th>
+            <th width="15%">價格</th>
             <th width="15%">數量</th>
             <th width="15%">小計</th>
-        </tr>
+        </tr> 
 
         <tr>
             <td>
@@ -140,15 +150,17 @@
             </td>
             <td>
                 <p>
-                    聖誕柴犬
+                    <b>⭐ 聖誕柴犬 - 聖誕特別款 ⭐</b>
                 </p>
-                <p class="priceClass" id="price1" data-price="200">
-                    200元/個
-                </p>
+                <br>
                 <p>
-                    可愛柴犬布偶.娃娃.公仔玩偶.毛絨玩具.聖誕禮物
+                    柴犬布偶 / 娃娃公仔 / 毛絨玩偶 / 聖誕禮物
                 </p>
-
+            </td>
+            <td>
+                <p class="priceClass" id="price1" data-price="200">
+                    200元 / 個
+                </p>
             </td>
             <td>
                 <input class="inputClass" type="number" name="" id="input1" value="0" max="10" min="0">
@@ -166,15 +178,17 @@
             </td>
             <td>
                 <p>
-                    聖誕老公公/雪人/麋鹿 - 聖誕基本款
+                    <b>⭐聖誕老公公 / 雪人 / 麋鹿 - 聖誕基本款⭐</b>
                 </p>
-                <p class="priceClass" id="price2" data-price="600">
-                    600元/組
-                </p>
+                <br>
                 <p>
-                    聖誕節玩偶組(聖誕老公公/雪人/麋鹿) ★ 聖誕禮物
+                    聖誕節玩偶組 (聖誕老公公 / 雪人 / 麋鹿) 
                 </p>
-
+            </td>
+            <td>
+                <p class="priceClass" id="price2" data-price="600">
+                    600元 / 組
+                </p>
             </td>
             <td>
                 <input class="inputClass" type="number" name="" id="input2" value="0" max="10" min="0">
@@ -192,15 +206,17 @@
             </td>
             <td>
                 <p>
-                    吉伊卡哇 - 聖誕系列
-                </p>
-                <p class="priceClass" id="price3" data-price="1000">
-                    1000元/組
-                </p>
+                    <b>⭐ 吉伊卡哇 - 聖誕系列 ⭐</b>
+                </p>   
+                <br>            
                 <p>
                     日本 Chiikawa 吉伊卡哇 聖誕節禮品
                 </p>
-
+            </td>
+            <td>
+                <p class="priceClass" id="price3" data-price="1000">
+                    1000元 / 組
+                </p>
             </td>
             <td>
                 <input class="inputClass" type="number" name="" id="input3" value="0" max="10" min="0">
@@ -218,15 +234,17 @@
             </td>
             <td>
                 <p>
-                    角角落生物 - 聖誕系列
+                    <b>⭐ 角落小夥伴 - 聖誕系列 ⭐</b>
                 </p>
-                <p class="priceClass" id="price3" data-price="1500">
-                    1500元/組
-                </p>
+                <br>
                 <p>
-                    角角落生物.聖誕節絨毛玩偶 ★ 聖誕禮物
+                    角落小夥伴 聖誕節絨毛玩偶 / 聖誕禮物
                 </p>
-
+            </td>
+            <td>
+                <p class="priceClass" id="price3" data-price="1500">
+                    1500元 / 組
+                </p>
             </td>
             <td>
                 <input class="inputClass" type="number" name="" id="input3" value="0" max="10" min="0">
@@ -240,15 +258,15 @@
 
         <tr>
             <td colspan="3">
-                總共金額為
+                <b>🎅 總計金額為 </b>
             </td>
             <!-- <td>
             </td>
             <td>
             </td> -->
-            <td>
+            <td colspan="2">
                 <p id="sumResult">
-                    0 元
+                   🎁 0 元
                 </p>
 
             </td>
@@ -256,7 +274,10 @@
 
     </table>
 
-    <hr>
+    <div class="right-image">
+        <img src="./images/right-image.png" alt="右圖1" />
+    </div>
+
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
@@ -280,7 +301,7 @@
                 });
 
                 // 重構
-                if (sum >= 200) {
+                if (sum >= 800) {
                     sum = sum * 0.8;
                     sumResult.attr('class', 'text-red');
                 } else {
@@ -288,7 +309,7 @@
                     // sumResult.removeClass('text-red');
                 }
 
-                let resultString = `${sum} 元`;
+                let resultString = `🎁 NT $ ${sum} 元`;
                 sumResult.text(resultString);
 
             }
