@@ -29,15 +29,19 @@
     <button id="show">Show(顯示)</button>
     <button id="toggle">Toggle(隱藏/顯示)</button>
 
-    <div id="box">٩(๑•̀ω•́๑)۶
-
+    <div id="box">
+        <img src="https://picsum.photos/id/20/1920/1080" alt="" srcset="">
     </div>
+
     <!-- 顯示/隱藏(設定秒數) 淡入/淡出 -->
     <!-- load animation 登入的時候 淡入 -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
         $(document).ready(function () {
+
+            // box.hide()
+            // box.show(3000);
             // 1.bind
             const hide = $('#hide');
             const show = $('#show');
@@ -45,19 +49,18 @@
             const box = $('#box');
 
             box.hide();
-            box.fadeIn(3000);
-
+            box.fadeIn(10000);
             // 2.action
             hide.click(function (e) {
                 console.log('hide ok');
                 box.fadeOut(3000);
-                // 可以用'slow'或秒數
+
             });
 
             show.click(function (e) {
                 console.log('show ok');
                 box.fadeIn(3000);
-                // 3000秒=3秒
+
             });
 
             toggle.click(function () {
