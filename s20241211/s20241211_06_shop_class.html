@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SHOP-把id的版本轉成class(重要)</title>
     <style>
         table {
             font-family: arial, sans-serif;
@@ -202,11 +202,11 @@
                     // now ?
                     console.log('now $(this)', $(this));
 
-                    // parent() tr
+                    // parent() tr (從現在的位置 往上找，找到 最上面 的tr)
                     myParent = $(this).parent().parent();
                     console.log('myParent', myParent);
 
-                    // find() .class
+                    // find() .class (再從找到的最上面的tr，往下找 所有的價格）
                     myPrice = myParent.find('.priceClass').attr('data-price');
                     console.log('myPrice', myPrice);
 
