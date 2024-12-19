@@ -9,39 +9,56 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
         integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .bg-primary {
+            font-size: 20px;
+        }
+
+        img {
+            width: 10%;
+            height: 10%;
+            object-fit: contain;
+            border-radius: 10%;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container mt-3">
-        <h2>Hoverable Dark Table</h2>
+        <h2 class="text-danger">Hoverable Dark Table</h2>
         <p>The .table-hover class adds a hover effect (grey background color) on table rows:</p>
         <table class="table table-dark table-hover">
             <thead>
                 <tr>
-                    <th>id</th>
-                    <th>pic</th>
-                    <th>desc</th>
+                    <th class="bg-primary myvid">vid</th>
+                    <th class="bg-primary">圖片pic
+                    </th>
+                    <th class="bg-primary">產品介紹sesc</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>John</td>
-                    <td>Doe</td>
+                    <td class="text-warning">John</td>
                     <td>
-                        <p>john@example.com</p>
-                        <p>john@example.com</p>
-                        <p>john@example.com</p>
+                        <img src="./images/1.png" alt="" srcset="">
+                    </td>
+                    <td class="text-info">
+                        <p>⭐ 聖誕柴犬 - 聖誕特別款 ⭐</p>
+                        <p>柴犬布偶 / 娃娃公仔 / 毛絨玩偶 / 聖誕禮物</p>
+                        <p>NT $ 200元 / 個</p>
                     </td>
                 </tr>
                 <tr>
-                    <td>Mary</td>
+                    <td class="text-warning">Mary</td>
                     <td>Moe</td>
-                    <td>mary@example.com</td>
+                    <td class="text-info">
+                        mary@example.com
+                    </td>
                 </tr>
                 <tr>
-                    <td>July</td>
+                    <td class="text-warning">July</td>
                     <td>Dooley</td>
-                    <td>july@example.com</td>
+                    <td class="text-info">july@example.com</td>
                 </tr>
             </tbody>
         </table>
@@ -69,7 +86,7 @@
 
             }, function () {
                 console.log('hover out');
-                $(this).attr('class', '');
+                $(this).attr('class', 'text-white-50');
             }
             );
 
@@ -77,6 +94,26 @@
         });
     </script>
 
+    <script>
+        $(document).ready(function () {
+            // 1.bind
+            const td = $("td");
+
+            // 2.action
+            td.hover(function () {
+                console.log('hover in');
+                // $(this).text('ok');
+                $(this).attr('class', 'text-danger');
+
+            }, function () {
+                console.log('hover out');
+                $(this).attr('class', 'text-white-50');
+            }
+            );
+
+
+        });
+    </script>
 
 </body>
 
