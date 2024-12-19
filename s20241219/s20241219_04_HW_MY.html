@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- link css 順序 1.bs 2.self -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+        integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        .mynavbar {
+            /* position: fixed;
+            width: 100%;
+            z-index: 1030; */
+            background-color: rgba(0, 0, 0, 0.5);
+            font-size: 20px;
+            margin-left: 12px;
+            margin-right: 12px;
+            /* 透明度 */
+            /* opacity: 1; */
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- nav -->
+    <div class="container-fluid">
+        <!-- 這是原始的 -->
+        <!-- <nav class="navbar navbar-expand-sm navbar-dark bg-dark"> -->
+        <!-- 想要改半透明 bg-dark 先拿掉 -->
+        <!-- 改成浮動，使用 fixed-top 讓最上方固定在最上面 -->
+        <!-- Bootstrap 5 Scrollspy 裡面有 fixed-top -->
+        <!-- position-fixed 也會固定在上方，但是比較窄 -->
+
+        <!-- BS5 模板: https://themefisher.com/ -->
+        <!-- GOOGLE搜尋: free template admin bootstrap 5 找你喜歡的版也行-->
+
+        <!-- 官網有免費的版可以下載來用:https://getbootstrap.com/docs/5.3/examples/ -->
+        <!-- Download examples 解壓縮 ，然後裡面就有模板可以選喜歡的使用-->
+
+        <nav class="navbar navbar-expand-sm mynavbar navbar-dark fixed-top ">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="javascript:void(0)">
+                    <!-- 可以在前面加上圖示 -->
+                    <img src="./images/left-image.png" alt="Bootstrap" width="30" height="30">
+                    SHOP
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mynavbar">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item me-3">
+                            <a class="nav-link" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item me-3">
+                            <!-- 讓每次點選時可以跳掉該顏色區塊最上方，需改成 href="#page1"，類推；搭配下方的ID -->
+                            <a class="nav-link" href="#page1">產品介紹</a>
+                        </li>
+                        <li class="nav-item me-3">
+                            <a class="nav-link" href="#page2">page2</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#page3">page3</a>
+                        </li>
+                    </ul>
+                    <!-- <form class="d-flex">
+                        <input class="form-control me-2" type="text" placeholder="Search">
+                        <button class="btn btn-primary" type="button">Search</button>
+                    </form> -->
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- container1 -->
+    <div id="home"></div>
+    <div class="container-fluid">
+        <!-- Carousel -->
+        <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+            <!-- Indicators/dots -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+            </div>
+
+            <!-- The slideshow/carousel -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://picsum.photos/id/56/1920/1024" alt="Light" class="d-block" style="width:100%">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://picsum.photos/id/104/1920/1024" alt="dreamcatcher" class="d-block"
+                        style="width:100%">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://picsum.photos/id/401/1920/1024" alt="hot air balloon" class="d-block"
+                        style="width:100%">
+                </div>
+            </div>
+
+            <!-- Left and right controls/icons -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </div>
+
+    <br><br>
+
+    <!-- container2 -->
+    <div id="page1"></div>
+    <div class="container mt-2">
+        <h2 class="text-danger">產品介紹</h2>
+
+        <div class="row">
+            <!-- 左側欄位 - 產品介紹表格 -->
+            <div class="col-md-8">
+                <table class="table table-dark table-hover">
+                    <thead>
+                        <tr>
+                            <th class="bg-primary text-center" style="width: 20%;">vid</th>
+                            <th class="bg-primary text-center" style="width: 40%;">圖片 pic</th>
+                            <th class="bg-primary text-center" style="width: 40%;">敘述 sesc</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-warning text-center">001</td>
+                            <td class="text-center">
+                                <img src="./images/1.png" alt="" srcset=""
+                                    style="width: 50%;height: 50%;object-fit: contain;border-radius: 10%;">
+                            </td>
+                            <td class="text-info">
+                                <p>⭐ 聖誕柴犬 - 聖誕特別款 ⭐</p>
+                                <p>柴犬布偶 / 娃娃公仔 / 毛絨玩偶 / 聖誕禮物</p>
+                                <p>NT $ 200元 / 個</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-warning text-center">002</td>
+                            <td class="text-center">
+                                <img src="./images/2.png" alt="" srcset=""
+                                    style="width: 50%;height: 50%;object-fit: contain;border-radius: 10%;">
+                            </td>
+                            <td class="text-info">
+                                <p>⭐聖誕老公公 / 雪人 / 麋鹿 - 聖誕基本款⭐</p>
+                                <p>聖誕節玩偶組 (聖誕老公公 / 雪人 / 麋鹿)</p>
+                                <p>NT $ 200元 / 個</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-warning text-center">003</td>
+                            <td class="text-center">
+                                <img src="./images/3.png" alt="" srcset=""
+                                    style="width: 50%;height: 50%;object-fit: contain;border-radius: 10%;">
+                            </td>
+                            <td class="text-info">
+                                <p>⭐ 吉伊卡哇 - 聖誕系列 ⭐</p>
+                                <p>日本 Chiikawa 吉伊卡哇 聖誕節禮品</p>
+                                <p>NT $ 1000元 / 組</p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="text-warning text-center">004</td>
+                            <td class="text-center">
+                                <img src="./images/4.png" alt="" srcset=""
+                                    style="width: 50%;height: 50%;object-fit: contain;border-radius: 10%;">
+                            </td>
+                            <td class="text-info">
+                                <p>⭐ 角落小夥伴 - 聖誕系列 ⭐</p>
+                                <p>角落小夥伴 聖誕節絨毛玩偶 / 聖誕禮物</p>
+                                <p>NT $ 1500元 / 組</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 右側欄位 - 影片 -->
+            <div class="col-md-4"><br>
+                <h2>🎅 Christmas videos 🎄</h2>
+                <div class="mb-3">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/nLY3UhPn9Ts?si=1rwPEfOb48fO9WhF"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/R3pA91ACRP8?si=uvB7B2m9MisteQ9R"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- container3 -->
+    <div id="page2"></div>
+    <div class="container mt-2">
+        <h2 class="text-danger">店鋪地址</h2>
+
+        <div class="row">
+            <!-- 左側欄位 - 產品介紹表格 -->
+            <div class="col-md-6">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.7036499805677!2d121.41694067537684!3d25.04412927780987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a7bec9ad74b1%3A0xa639904a89f26435!2z5Yue5YuV6YOo5Yue5YuV5Yqb55m85bGV572y5YyX5Z-65a6c6Iqx6YeR6aas5YiG572y5rOw5bGx6IG35qWt6KiT57e05aC0!5e0!3m2!1szh-TW!2stw!4v1734597116467!5m2!1szh-TW!2stw"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- 左側欄位 - 產品介紹表格 -->
+            <div class="col-md-6">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.7036499805677!2d121.41694067537684!3d25.04412927780987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a7bec9ad74b1%3A0xa639904a89f26435!2z5Yue5YuV6YOo5Yue5YuV5Yqb55m85bGV572y5YyX5Z-65a6c6Iqx6YeR6aas5YiG572y5rOw5bGx6IG35qWt6KiT57e05aC0!5e0!3m2!1szh-TW!2stw!4v1734597116467!5m2!1szh-TW!2stw"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+    <!-- container1 -->
+    <div id="page3"></div>
+    <div class="container-fluid">
+        <div class="box bg-primary vh-100"></div>
+    </div>
+
+
+
+    <!-- js include 順序 1.bs 2.jq 3.self -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
+        integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function () {
+
+
+
+        });
+    </script>
+</body>
+
+</html>
