@@ -25,6 +25,10 @@
             /* opacity: 1; */
         }
 
+        .specialDiscount {
+            color: lightcoral;
+        }
+
         .bd-placeholder-img {
             font-size: 1.125rem;
             text-anchor: middle;
@@ -101,12 +105,31 @@
         .bd-mode-toggle .dropdown-menu .active .bi {
             display: block !important;
         }
+
+        /* 設定圖片的初始  */
+        .image-hover {
+            filter: brightness(0.95);
+            /* 添加過度效果   */
+            transition: filter 0.5s ease, transform 0.5s ease;
+        }
+
+        /* 設定滑鼠停在上面的效果 */
+        .image-hover:hover {
+            /*  改變滑鼠形状   */
+            cursor: pointer;
+            /* 改變圖像亮度，顏色變化  */
+            filter: brightness(1.05);
+            /* 放大圖像  */
+            transform: scale(1.025);
+        }
     </style>
 
 </head>
 
 <body>
-
+    <!-- 音頻元素 -->
+    <audio id="audioElement" src="./sounds/sound.mp3" preload="auto"></audio> <!-- 替換為你實際的音頻文件路徑 -->
+    </div>
     <!-- nav -->
     <div class="container-fluid">
         <!-- 這是原始的 -->
@@ -127,25 +150,25 @@
                 <a class="navbar-brand" href="javascript:void(0)">
                     <!-- 可以在前面加上圖示 -->
                     <img src="./images/left-image.png" alt="Bootstrap" width="30" height="30">
-                    SHOP
+                    Christmas Music Toy Shop
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="mynavbar">
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item me-3">
-                            <a class="nav-link" href="#home">Home</a>
+                    <ul class="navbar-nav me-auto mx-auto">
+                        <li class="nav-item me-4">
+                            <a class="nav-link" href="#home">🏠 Home</a>
                         </li>
-                        <li class="nav-item me-3">
+                        <li class="nav-item me-4">
                             <!-- 讓每次點選時可以跳掉該顏色區塊最上方，需改成 href="#page1"，類推；搭配下方的ID -->
-                            <a class="nav-link" href="#page1">商品分類</a>
+                            <a class="nav-link" href="#page1">🛍️ 商品分類</a>
                         </li>
-                        <li class="nav-item me-3">
-                            <a class="nav-link" href="#page2">促銷商品</a>
+                        <li class="nav-item me-4">
+                            <a class="nav-link" href="#page2">📢 促銷商品</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#page3">店鋪資訊</a>
+                            <a class="nav-link" href="#page3">🏢 店鋪資訊</a>
                         </li>
                     </ul>
                     <form class="d-flex">
@@ -186,12 +209,12 @@
                         style="width: 1920px; height:1024px; object-fit: cover; object-position: center;">
                 </div>
                 <div class="carousel-item">
-                    <img src="./images/bg2.jpg" alt="dreamcatcher" class="d-block"
+                    <img src="./images/bg02.jpg" alt="dreamcatcher" class="d-block"
                         style="width: 1920px; height:1024px; object-fit: cover; object-position: center;">
                 </div>
                 <div class="carousel-item">
-                    <img src="./images/bg5.jpg" alt="hot air balloon" class="d-block"
-                        style="width: 1920px; height:1024px; object-fit: cover; object-position: center;">
+                    <img src="./images/bg05.jpg" alt="hot air balloon" class="d-block"
+                        style="width: 1920px; height:924px; object-fit: cover; object-position: center;">
                 </div>
                 <!-- <div class="carousel-item">
                     <img src="./images/bg3.jpg" alt="hot air balloon" class="d-block"
@@ -226,7 +249,8 @@
                     <!-- 圓形裁剪區域 -->
                     <circle cx="70" cy="70" r="70" fill="white" />
                     <!-- 插入圖片並裁剪為圓形 -->
-                    <image href="./imgs/1.jpg" x="0" y="0" width="140" height="140" clip-path="url(#clipCircle)" />
+                    <image href="./imgs/1.jpg" x="0" y="0" width="140" height="140" clip-path="url(#clipCircle)"
+                        onclick="playsound(1)" class="image-hover" />
                     <!-- 定義圓形裁剪區域 -->
                     <defs>
                         <clipPath id="clipCircle">
@@ -247,7 +271,8 @@
                     <!-- 圓形裁剪區域 -->
                     <circle cx="70" cy="70" r="70" fill="white" />
                     <!-- 插入圖片並裁剪為圓形 -->
-                    <image href="./imgs/2.jpg" x="0" y="0" width="140" height="140" clip-path="url(#clipCircle)" />
+                    <image href="./imgs/2.jpg" x="0" y="0" width="140" height="140" clip-path="url(#clipCircle)"
+                        onclick="playsound(1)" class="image-hover" />
                     <!-- 定義圓形裁剪區域 -->
                     <defs>
                         <clipPath id="clipCircle">
@@ -268,7 +293,8 @@
                     <!-- 圓形裁剪區域 -->
                     <circle cx="70" cy="70" r="70" fill="white" />
                     <!-- 插入圖片並裁剪為圓形 -->
-                    <image href="./imgs/3.jpg" x="0" y="0" width="140" height="140" clip-path="url(#clipCircle)" />
+                    <image href="./imgs/3.jpg" x="0" y="0" width="140" height="140" clip-path="url(#clipCircle)"
+                        onclick="playsound(1)" class="image-hover" />
                     <!-- 定義圓形裁剪區域 -->
                     <defs>
                         <clipPath id="clipCircle">
@@ -289,7 +315,8 @@
                     <!-- 圓形裁剪區域 -->
                     <circle cx="70" cy="70" r="70" fill="white" />
                     <!-- 插入圖片並裁剪為圓形 -->
-                    <image href="./imgs/4.jpg" x="-30" y="-30" width="200" height="200" clip-path="url(#clipCircle)" />
+                    <image href="./imgs/4.jpg" x="-30" y="-30" width="200" height="200" clip-path="url(#clipCircle)"
+                        onclick="playsound(1)" class="image-hover" />
                     <!-- 定義圓形裁剪區域 -->
                     <defs>
                         <clipPath id="clipCircle">
@@ -310,7 +337,8 @@
                     <!-- 圓形裁剪區域 -->
                     <circle cx="70" cy="70" r="70" fill="white" />
                     <!-- 插入圖片並裁剪為圓形 -->
-                    <image href="./imgs/5.jpg" x="0" y="0" width="140" height="140" clip-path="url(#clipCircle)" />
+                    <image href="./imgs/5.jpg" x="0" y="0" width="140" height="140" clip-path="url(#clipCircle)"
+                        onclick="playsound(1)" class="image-hover" />
                     <!-- 定義圓形裁剪區域 -->
                     <defs>
                         <clipPath id="clipCircle">
@@ -331,7 +359,8 @@
                     <!-- 圓形裁剪區域 -->
                     <circle cx="70" cy="70" r="70" fill="white" />
                     <!-- 插入圖片並裁剪為圓形 -->
-                    <image href="./imgs/6.jpg" x="0" y="0" width="140" height="140" clip-path="url(#clipCircle)" />
+                    <image href="./imgs/6.jpg" x="0" y="0" width="140" height="140" clip-path="url(#clipCircle)"
+                        onclick="playsound(1)" class="image-hover" />
                     <!-- 定義圓形裁剪區域 -->
                     <defs>
                         <clipPath id="clipCircle">
@@ -359,6 +388,9 @@
     <!-- <div id="page1"></div> -->
     <div class="container mt-2">
         <h2 class="text-danger">📢 促銷商品</h2>
+        <td class="specialDiscount">
+            <b>🔔 歡慶佳節限時折扣： 🦌 滿 800 元 打 8 折 🛷 滿千送神祕小禮 ~【 數量有限，送完為止 】</b>
+        </td>
 
         <div class="row">
             <!-- 左側欄位 - 產品介紹表格 -->
@@ -564,6 +596,14 @@
 
         });
     </script>
+
+    <script>
+        function playsound(num) {
+            var audio = document.getElementById("audioElement");
+            audio.play();
+        }
+    </script>
+
 </body>
 
 </html>
