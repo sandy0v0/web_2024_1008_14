@@ -843,9 +843,8 @@
         </div>
 
 
-        <br>
         <hr class="featurette-divider" id="page4">
-        <br><br><br>&nbsp;
+        <br>&nbsp;
 
         <!-- container3 -->
         <div class="container mt-2 container-fluid py-6">
@@ -888,103 +887,166 @@
             </div>
         </div>
     </div>
-    <br><br><br><br><br><br><br><br>
 
     <hr class="featurette-divider">
 
     <!-- FOOTER -->
-    <footer class="container d-flex flex-row justify-content-between align-items-center">
+    <div class="container">
+        <footer class="py-2">
+            <div class="row">
+                <div class="col-6 col-md-2 mb-3">
+                    <h5>關於我們</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">商品及服務</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">永續承諾</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">人才招募</a></li>
+                    </ul>
+                </div>
 
-        <p class="me-5 mt-2 mb-0">&copy; 2024–2025 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a
-                href="#">Terms</a>
-        </p>
+                <div class="col-6 col-md-2 mb-3">
+                    <h5>會員中心</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2">
+                            <a href="signup.html" class="nav-link p-0 text-body-secondary">
+                                加入會員
+                            </a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a href="signup.html" class="nav-link p-0 text-body-secondary">
+                                註冊線上會員
+                            </a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a href="login.html" class="nav-link p-0 text-body-secondary">
+                                登入線上帳戶
+                            </a>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <a href="#" class="nav-link p-0 text-body-secondary">常見問與答</a>
+                        </li>
+                    </ul>
+                </div>
 
-        <!-- 社交媒體圖示連結 -->
+                <div class="col-6 col-md-2 mb-3">
+                    <h5>店鋪相關服務</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">店鋪首頁</a></li>
+                        <li class="nav-item mb-2"><a href="#page2" class="nav-link p-0 text-body-secondary">新品預告</a>
+                        </li>
+                        <li class="nav-item mb-2"><a href="#page3" class="nav-link p-0 text-body-secondary">商品特展</a>
+                        </li>
+                        <li class="nav-item mb-2"><a href="#page4" class="nav-link p-0 text-body-secondary">店鋪資訊</a>
+                        </li>
+                    </ul>
+                </div>
 
-        <div class="social-icons d-flex justify-content-center">
-            <p class="mt-4">追蹤我們 :</p>
-            <a href="https://www.facebook.com" target="_blank" class="text-decoration-none mt-3">
-                <i class="fab fa-facebook-square"></i>
-            </a>
-            <a href="https://www.instagram.com" target="_blank" class="text-decoration-none mt-3">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://line.me" target="_blank" class="text-decoration-none mt-3">
-                <i class="fab fa-line"></i>
-            </a>
-        </div>
+                <div class="col-md-5 offset-md-1 mb-3">
+                    <form>
+                        <h5>訂閱我們的電子報</h5>
+                        <p>每月摘要我們的新鮮事和第一手商品優惠特別訊息</p>
+                        <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                            <label for="newsletter1" class="visually-hidden">電子郵件</label>
+                            <input id="newsletter1" type="text" class="form-control" placeholder="電子郵件">
+                            <button class="btn btn-primary" type="button">訂閱</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
 
-        <!-- 🔝 -->
-        <p class="float-end mt-2 mb-0"><a href="#">回頂端 ↥</a></p>
-        <br><br><br>
-    </footer>
+            <div
+                class="container d-flex flex-column flex-sm-row justify-content-between py-1 my-4 align-items-center border-top">
+                <p>&copy; 2024–2025 Company, Inc. 保留所有權利
+                    &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a>
+                </p>
 
-    <!-- js include 順序 1.bs 2.jq 3.self -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
-        integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+                <!-- 社交媒體圖示連結 -->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script>
-        $(document).ready(function () {
+                <div class="social-icons d-flex justify-content-center">
+                    <p class="mt-4">追蹤我們 :</p>
+                    <a href="https://www.facebook.com" target="_blank" class="text-decoration-none mt-3">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                    <a href="https://www.instagram.com" target="_blank" class="text-decoration-none mt-3">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://line.me" target="_blank" class="text-decoration-none mt-3">
+                        <i class="fab fa-line"></i>
+                    </a>
+                </div>
 
-        });
-    </script>
+                <!-- 🔝 -->
+                <p class="float-end mt-2 mb-0">
+                    <a href="#">回頂端 ↥</a>
+                </p>
+            </div>
+        </footer>
 
-    <script>
-        function playsound(num) {
-            var audio = document.getElementById("audioElement");
-            audio.play();
-        }
-    </script>
+        <!-- js include 順序 1.bs 2.jq 3.self -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
+            integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script>
-        // 設定每個卡片的上架日期
-        const targetDates = {
-            countdown1: new Date("2025-01-01T00:00:00"), // 卡片1的上架日期
-            countdown2: new Date("2025-02-15T00:00:00"), // 卡片2的上架日期
-            countdown3: new Date("2025-03-01T00:00:00"), // 卡片3的上架日期
-            countdown4: new Date("2025-03-15T00:00:00"), // 卡片4的上架日期
-            countdown5: new Date("2025-03-19T00:00:00"), // 卡片5的上架日期
-        };
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+            integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script>
+            $(document).ready(function () {
 
-        // 更新倒數天數
-        function updateCountdown(id, targetDate) {
-            const currentDate = new Date();  // 當前日期
-            const timeDiff = targetDate - currentDate;  // 計算目標時間與當前時間的差值（以毫秒為單位）
+            });
+        </script>
 
-            // 計算剩餘天數
-            const remainingDays = Math.ceil(timeDiff / (1000 * 3600 * 24));  // 轉換成天數並向上取整
-
-            // 顯示倒數天數
-            const countdownElement = document.getElementById(id);
-            if (remainingDays > 0) {
-                countdownElement.textContent = `📅 ${remainingDays} 天後上架`;
-            } else {
-                countdownElement.textContent = "已上架，歡迎訂購！";
+        <script>
+            function playsound(num) {
+                var audio = document.getElementById("audioElement");
+                audio.play();
             }
-        }
+        </script>
 
-        // 每秒更新一次倒數
-        setInterval(function () {
+        <script>
+            // 設定每個卡片的上架日期
+            const targetDates = {
+                countdown1: new Date("2025-01-01T00:00:00"), // 卡片1的上架日期
+                countdown2: new Date("2025-02-15T00:00:00"), // 卡片2的上架日期
+                countdown3: new Date("2025-03-01T00:00:00"), // 卡片3的上架日期
+                countdown4: new Date("2025-03-15T00:00:00"), // 卡片4的上架日期
+                countdown5: new Date("2025-03-19T00:00:00"), // 卡片5的上架日期
+            };
+
+            // 更新倒數天數
+            function updateCountdown(id, targetDate) {
+                const currentDate = new Date();  // 當前日期
+                const timeDiff = targetDate - currentDate;  // 計算目標時間與當前時間的差值（以毫秒為單位）
+
+                // 計算剩餘天數
+                const remainingDays = Math.ceil(timeDiff / (1000 * 3600 * 24));  // 轉換成天數並向上取整
+
+                // 顯示倒數天數
+                const countdownElement = document.getElementById(id);
+                if (remainingDays > 0) {
+                    countdownElement.textContent = `📅 ${remainingDays} 天後上架`;
+                } else {
+                    countdownElement.textContent = "已上架，歡迎訂購！";
+                }
+            }
+
+            // 每秒更新一次倒數
+            setInterval(function () {
+                updateCountdown("countdown1", targetDates.countdown1);
+                updateCountdown("countdown2", targetDates.countdown2);
+                updateCountdown("countdown3", targetDates.countdown3);
+                updateCountdown("countdown4", targetDates.countdown4);
+                updateCountdown("countdown5", targetDates.countdown5);
+            }, 1000);
+
+            // 頁面加載時立即顯示一次倒數
             updateCountdown("countdown1", targetDates.countdown1);
             updateCountdown("countdown2", targetDates.countdown2);
             updateCountdown("countdown3", targetDates.countdown3);
             updateCountdown("countdown4", targetDates.countdown4);
             updateCountdown("countdown5", targetDates.countdown5);
-        }, 1000);
+        </script>
 
-        // 頁面加載時立即顯示一次倒數
-        updateCountdown("countdown1", targetDates.countdown1);
-        updateCountdown("countdown2", targetDates.countdown2);
-        updateCountdown("countdown3", targetDates.countdown3);
-        updateCountdown("countdown4", targetDates.countdown4);
-        updateCountdown("countdown5", targetDates.countdown5);
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 </body>
 
 </html>
