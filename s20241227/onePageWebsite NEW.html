@@ -183,6 +183,20 @@
             transform: scale(1.025);
         }
 
+        /* 設定圖片的初始  */
+        .img-hover {
+            /* 添加過度效果   */
+            transition: filter 0.5s ease, transform 0.5s ease;
+        }
+
+        /* 設定滑鼠停在上面的效果 */
+        .img-hover:hover {
+            /*  改變滑鼠形状   */
+            cursor: pointer;
+            /* 放大圖像  */
+            transform: scale(1.025);
+        }
+
         .social-icons a {
             font-size: 30px;
             margin: 0 10px;
@@ -255,10 +269,13 @@
                             </ul>
                         </li>
                         <li class="nav-item me-4">
-                            <a class="nav-link" href="#page2">📢 優惠商品</a>
+                            <a class="nav-link" href="#page2">✨ 新品預告</a>
+                        </li>
+                        <li class="nav-item me-4">
+                            <a class="nav-link" href="#page3">📢 優惠商品</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#page3">🏢 店鋪資訊</a>
+                            <a class="nav-link" href="#page4">🏢 店鋪資訊</a>
                         </li>
                     </ul>
                     <form class="d-flex">
@@ -344,7 +361,7 @@
     <div class="container marketing">
 
         <!-- 幻燈片下方的三列文字 -->
-        <div class="row">
+        <div class="row py-3">
             <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 mb-4 d-flex flex-column align-items-center">
                 <svg class="bd-placeholder-img rounded-circle" width="140" height="140"
                     xmlns="http://www.w3.org/2000/svg" role="img" aria-label="水晶球" preserveAspectRatio="xMidYMid slice"
@@ -364,7 +381,7 @@
                 </svg>
                 <h3 class="fw-normal mt-2" style="color: tan;">水 晶 球</h3>
                 <!-- <p>最後，這是第三列的代表性占位符內容。</p> -->
-                <p><a class="btn btn-secondary" href="#">查看詳情 &raquo;</a></p>
+                <p><a class="btn btn-secondary" href="#page2">查看詳情 &raquo;</a></p>
             </div><!-- /.col-lg-4 -->
 
             <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 mb-4 d-flex flex-column align-items-center">
@@ -386,7 +403,7 @@
                 </svg>
                 <h3 class="fw-normal mt-2" style="color: lightcoral;">飾 品 盒</h3>
                 <!-- <p>最後，這是第三列的代表性占位符內容。</p> -->
-                <p><a class="btn btn-secondary" href="#">查看詳情 &raquo;</a></p>
+                <p><a class="btn btn-secondary" href="#page2">查看詳情 &raquo;</a></p>
             </div><!-- /.col-lg-4 -->
 
             <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 mb-4 d-flex flex-column align-items-center">
@@ -406,7 +423,7 @@
                         </clipPath>
                     </defs>
                 </svg>
-                <h3 class="fw-normal mt-2" style="color: tan;">藝文擺設</h3>
+                <h3 class="fw-normal mt-2" style="color: tan;">藝文裝飾</h3>
                 <!-- <p>最後，這是第三列的代表性占位符內容。</p> -->
                 <p><a class="btn btn-secondary" href="#">查看詳情 &raquo;</a></p>
             </div><!-- /.col-lg-4 -->
@@ -482,15 +499,195 @@
     </div><!-- /.container -->
 
 
+    <hr class="featurette-divider" id="page2"><br>
 
+    <div class="container px-4 py-4" id="custom-cards" onclick="playsound(1)">
+        <h2 class="pb-1">✨新品預告</h2>
+
+        <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-2"
+            style="text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);">
+            <div class="col">
+                <div class="card card-cover h-100 overflow-hidden text-bg-white rounded-4 shadow-lg img-hover"
+                    style="background-image: url('./imgs/11.jpg'); background-size: cover; background-position: center;">
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                        <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
+                            音符與夢幻完美融合，旋律藏滿心意與祝福
+                        </h3>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                                <img src="./images/left-image.png" alt="Bootstrap" width="50" height="50"
+                                    class="rounded-circle border border-white">
+                            </li>
+                            <li class="d-flex align-items-center me-3">
+                                <svg class="bi me-2" width="1em" height="1em">
+                                    <use xlink:href="#geo-fill" />
+                                </svg>
+                                <small>訂製音樂盒</small>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <svg class="bi me-2" width="1em" height="1em">
+                                    <use xlink:href="#calendar3" />
+                                </svg>
+                                <small id="countdown1"></small> <!-- 用 id="countdown" 來顯示倒數 -->
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg img-hover"
+                    style="background-image: url('./imgs/12.jpg'); background-size: cover; background-position: center;">
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                        <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
+                            雪中小屋，點亮冬日溫馨夢<br>
+                        </h3>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                                <img src="./images/left-image.png" alt="Bootstrap" width="50" height="50"
+                                    class="rounded-circle border border-white">
+                            </li>
+                            <li class="d-flex align-items-center me-3">
+                                <svg class="bi me-2" width="1em" height="1em">
+                                    <use xlink:href="#geo-fill" />
+                                </svg>
+                                <small>水晶球</small>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <svg class="bi me-2" width="1em" height="1em">
+                                    <use xlink:href="#calendar3" />
+                                </svg>
+                                <small id="countdown2"></small> <!-- 用 id="countdown" 來顯示倒數 -->
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg img-hover"
+                    style="background-image: url('./imgs/13.jpg'); background-size: cover; background-position: center;">
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                        <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
+                            淺藍雲月，收藏夢幻美好時光<br>
+                        </h3>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                                <img src="./images/left-image.png" alt="Bootstrap" width="50" height="50"
+                                    class="rounded-circle border border-white">
+                            </li>
+                            <li class="d-flex align-items-center me-3">
+                                <svg class="bi me-2" width="1em" height="1em">
+                                    <use xlink:href="#geo-fill" />
+                                </svg>
+                                <small>收藏盒</small>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <svg class="bi me-2" width="1em" height="1em">
+                                    <use xlink:href="#calendar3" />
+                                </svg>
+                                <small id="countdown3"></small> <!-- 用 id="countdown" 來顯示倒數 -->
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg img-hover"
+                    style="background-image: url('./imgs/15.jpg'); background-size: cover; background-position: center;">
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                        <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
+                            <br>精緻奢華，完美珍藏
+                        </h3>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                                <img src="./images/left-image.png" alt="Bootstrap" width="50" height="50"
+                                    class="rounded-circle border border-white">
+                            </li>
+                            <li class="d-flex align-items-center me-3">
+                                <svg class="bi me-2" width="1em" height="1em">
+                                    <use xlink:href="#geo-fill" />
+                                </svg>
+                                <small>粉橘水晶飾品盒</small>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <svg class="bi me-2" width="1em" height="1em">
+                                    <use xlink:href="#calendar3" />
+                                </svg>
+                                <small id="countdown4"></small> <!-- 用 id="countdown" 來顯示倒數 -->
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg img-hover"
+                    style="background-image: url('./imgs/14.jpg'); background-size: cover; background-position: center;">
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                        <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
+                            <br>典雅收藏，尊貴獨特
+                        </h3>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                                <img src="./images/left-image.png" alt="Bootstrap" width="50" height="50"
+                                    class="rounded-circle border border-white">
+                            </li>
+                            <li class="d-flex align-items-center me-3">
+                                <svg class="bi me-2" width="1em" height="1em">
+                                    <use xlink:href="#geo-fill" />
+                                </svg>
+                                <small>寶藍古典飾品盒</small>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <svg class="bi me-2" width="1em" height="1em">
+                                    <use xlink:href="#calendar3" />
+                                </svg>
+                                <small id="countdown5"></small> <!-- 用 id="countdown" 來顯示倒數 -->
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card card-cover h-100 overflow-hidden bg-secondary rounded-4 shadow-lg img-hover"
+                    style="background-image: url('./imgs/18.png'); background-size: cover; background-position: center;">
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                        <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
+                            <br>敬請期待...
+                        </h3>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                                <img src="./images/left-image.png" alt="Bootstrap" width="50" height="50"
+                                    class="rounded-circle border border-white">
+                            </li>
+                            <li class="d-flex align-items-center me-3">
+                                <svg class="bi me-2" width="1em" height="1em">
+                                    <use xlink:href="#geo-fill" />
+                                </svg>
+                                <small></small>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <svg class="bi me-2" width="1em" height="1em">
+                                    <use xlink:href="#calendar3" />
+                                </svg>
+                                <small id="countdown2"></small> <!-- 用 id="countdown" 來顯示倒數 -->
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <br>
-    <hr class="featurette-divider" id="page2">
-    <br><br>
+    <hr class="featurette-divider" id="page3">
 
     <!-- container2 -->
     <!-- <div id="page1"></div> -->
-    <div class="container mt-2 container-fluid">
+    <div class="container mt-2 container-fluid py-5">
         <h2 class="text-danger">📢 優惠商品</h2>
         <p class="specialDiscount mt-3">
             <b>🔔 歡慶佳節限時折扣： 🦌 滿 800 元 打 8 折 🛷 滿千送神祕小禮 🎁 ~【 數量有限，送完為止 】</b>
@@ -498,25 +695,37 @@
 
         <div class="row">
             <!-- 左側欄位 - 產品介紹表格 -->
-            <div class="col-md-8">
+            <div class="col-md-7">
                 <table class="table table-dark table-hover">
                     <thead>
                         <tr>
-                            <th class="bg-danger text-center" style="width: 20%;">vid</th>
+                            <th class="bg-danger text-center" style="width: 15%;">vid</th>
                             <th class="bg-danger text-center" style="width: 40%;">圖片 pic</th>
-                            <th class="bg-danger text-center" style="width: 40%;">敘述 sesc</th>
+                            <th class="bg-danger text-center" style="width: 45%;">敘述 sesc</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="text-warning text-center">040</td>
+                            <td class="text-warning text-center">031</td>
                             <td class="text-center">
-                                <img src="./imgs/9.jpg" alt="" srcset=""
-                                    style="width: 50%;height: 50%;object-fit: contain;border-radius: 10%;">
+                                <img src="./imgs/17.webp" alt="" srcset=""
+                                    style="width: 50%; height: 50%; object-fit: contain;border-radius: 10%;">
                             </td>
                             <td class="text-info">
                                 <p>⭐ 聖誕吊飾訂製 ⭐</p>
-                                <p>吊飾 /胸針 / 聖誕訂製款 / 飾品 / 聖誕禮物</p>
+                                <p>吊飾 / 聖誕訂製款 / 裝飾 / 聖誕禮物</p>
+                                <p>NT $ 100元 / 個</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-warning text-center">041</td>
+                            <td class="text-center">
+                                <img src="./imgs/9.jpg" alt="" srcset=""
+                                    style="width: 50%; height: 50%; object-fit: contain;border-radius: 10%;">
+                            </td>
+                            <td class="text-info">
+                                <p>⭐ 聖誕胸針訂製 ⭐</p>
+                                <p>胸針 / 聖誕訂製款 / 飾品 / 聖誕禮物</p>
                                 <p>NT $ 100元 / 個</p>
                             </td>
                         </tr>
@@ -600,7 +809,7 @@
             </div>
 
             <!-- 右側欄位 - 影片 -->
-            <div class="col-md-4 container-fluid">
+            <div class="col-md-5 container-fluid">
                 <h2>🎅 Christmas videos 🎄</h2>
                 <div>
                     <iframe width="100%" height="315"
@@ -635,11 +844,11 @@
 
 
         <br>
-        <hr class="featurette-divider" id="page3">
-        <br><br><br><br><br>&nbsp;
+        <hr class="featurette-divider" id="page4">
+        <br><br><br>&nbsp;
 
         <!-- container3 -->
-        <div class="container mt-2 container-fluid">
+        <div class="container mt-2 container-fluid py-6">
             <h2 class="text-danger">🏢 店鋪資訊</h2>
 
             <div class="row">
@@ -729,6 +938,50 @@
             var audio = document.getElementById("audioElement");
             audio.play();
         }
+    </script>
+
+    <script>
+        // 設定每個卡片的上架日期
+        const targetDates = {
+            countdown1: new Date("2025-01-01T00:00:00"), // 卡片1的上架日期
+            countdown2: new Date("2025-02-15T00:00:00"), // 卡片2的上架日期
+            countdown3: new Date("2025-03-01T00:00:00"), // 卡片3的上架日期
+            countdown4: new Date("2025-03-15T00:00:00"), // 卡片4的上架日期
+            countdown5: new Date("2025-03-19T00:00:00"), // 卡片5的上架日期
+        };
+
+        // 更新倒數天數
+        function updateCountdown(id, targetDate) {
+            const currentDate = new Date();  // 當前日期
+            const timeDiff = targetDate - currentDate;  // 計算目標時間與當前時間的差值（以毫秒為單位）
+
+            // 計算剩餘天數
+            const remainingDays = Math.ceil(timeDiff / (1000 * 3600 * 24));  // 轉換成天數並向上取整
+
+            // 顯示倒數天數
+            const countdownElement = document.getElementById(id);
+            if (remainingDays > 0) {
+                countdownElement.textContent = `📅 ${remainingDays} 天後上架`;
+            } else {
+                countdownElement.textContent = "已上架，歡迎訂購！";
+            }
+        }
+
+        // 每秒更新一次倒數
+        setInterval(function () {
+            updateCountdown("countdown1", targetDates.countdown1);
+            updateCountdown("countdown2", targetDates.countdown2);
+            updateCountdown("countdown3", targetDates.countdown3);
+            updateCountdown("countdown4", targetDates.countdown4);
+            updateCountdown("countdown5", targetDates.countdown5);
+        }, 1000);
+
+        // 頁面加載時立即顯示一次倒數
+        updateCountdown("countdown1", targetDates.countdown1);
+        updateCountdown("countdown2", targetDates.countdown2);
+        updateCountdown("countdown3", targetDates.countdown3);
+        updateCountdown("countdown4", targetDates.countdown4);
+        updateCountdown("countdown5", targetDates.countdown5);
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
