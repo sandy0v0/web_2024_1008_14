@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品清單</title>
+    <style>
+        .heart {
+            font-size: 24px;
+            color: gray;
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+
+        .heart.favorite {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="product_image.jpg" alt="商品圖" />
+        <button id="heart-1" class="heart" onclick="toggleFavorite(1)">&#9829;</button>
+    </div>
+
+    <script>
+        function toggleFavorite(productId) {
+            fetch('favorite.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `product_id=${productId}`
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        const heart = document.getElementById(`heart-${productId}`);
+                        heart.classList.toggle('favorite', data.favorite);
+                    } else {
+                        alert(data.message || '操作失敗');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+    </script>
+</body>
+
+</html>
