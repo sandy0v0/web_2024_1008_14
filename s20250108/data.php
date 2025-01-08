@@ -1,6 +1,6 @@
 <?php
 
-// 3間分公司的資料, 用Array的方式呈現資料, 在使用BS的table/data/foreach的方式呈現
+// 3間分公司的資料, 用Array的方式呈現資料, 接著用BS的table/data/foreach的方式呈現
 
 function dd($data)
 {
