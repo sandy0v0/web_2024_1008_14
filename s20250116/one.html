@@ -12,6 +12,9 @@
     <link rel="icon" href="./images/jea01-jarhz-001.ico" type="image/x-icon" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- 引入AOS的CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
 
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
         <symbol id="bootstrap" viewBox="0 0 118 94">
@@ -304,7 +307,7 @@
 
 <body>
     <div class="container px-4 py-5" id="featured-3">
-        <h2 class="pb-2 border-bottom">Columns with icons</h2>
+        <h2 class="pb-2 border-bottom">文章可以查看更多Columns with icons</h2>
         <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
             <div class="feature col">
                 <div
@@ -363,7 +366,7 @@
     <div class="b-example-divider"></div>
 
     <div class="container mt-3">
-        <h2>Progress Bar With Label</h2>
+        <h2>比例條 Progress Bar With Label</h2>
         <div class="progress">
             <div class="progress-bar" style="width:70%">70%</div>
         </div>
@@ -372,7 +375,7 @@
     <div class="b-example-divider"></div>
 
     <div class="container mt-3">
-        <h2>Pagination - Active State</h2>
+        <h2>左右鍵 Pagination - Active State</h2>
         <p>Add class .active to let the user know which page he/she is on:</p>
         <ul class="pagination">
             <li class="page-item"><a class="page-link" href="#">Previous</a></li>
@@ -386,7 +389,7 @@
     <div class="b-example-divider"></div>
 
     <div class="container mt-3">
-        <h2>Simple Collapsible</h2>
+        <h2>點擊隱藏或開啟Simple Collapsible</h2>
         <a href="#demo" class="btn btn-primary" data-bs-toggle="collapse">Simple collapsible</a>
         <div id="demo" class="collapse">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit,
@@ -398,7 +401,7 @@
     <div class="b-example-divider"></div>
 
     <div class="container px-4 py-5" id="icon-grid">
-        <h2 class="pb-2 border-bottom">Icon grid</h2>
+        <h2 class="pb-2 border-bottom">分八段小表+文字 有標題小圖 Icon grid</h2>
 
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
             <div class="col d-flex align-items-start">
@@ -478,14 +481,146 @@
 
     <div class="b-example-divider"></div>
 
+    <div class="container my-5" data-aos="fade-up" data-aos-delay="100">
+        <div class="position-relative p-5 text-center text-muted bg-body border border-dashed rounded-5">
+            <button type="button"
+                class="position-absolute top-0 end-0 p-3 m-3 btn-close bg-secondary bg-opacity-10 rounded-pill"
+                aria-label="Close"></button>
+            <svg class="bi mt-5 mb-3" width="48" height="48">
+                <use xlink:href="#check2-circle" />
+            </svg>
+            <h1 class="text-body-emphasis">大螢幕 右上有圓形關閉鈕 Placeholder jumbotron</h1>
+            <main class="form-signin w-100 m-auto">
+                <form>
+                    <img src="./images/left-image.png" alt="Bootstrap" width="72" height="57" onclick="openModal()"
+                        style="cursor: pointer;">
+                    <h1 class="h3 mb-3 fw-normal my-1 fw-bold fs-2">請登入</h1>
+
+                    <div class="form-floating mb-5">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">電子郵件位址</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                        <label for="floatingPassword">密碼</label>
+                    </div>
+
+                    <div class="form-check text-start my-5">
+                        <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            記住我
+                        </label>
+                    </div>
+                    <button class="btn btn-primary w-100 py-2" type="submit">登入</button>
+                    <p class="mt-5 mb-3 text-body-secondary">&copy; 2024–2025</p>
+                </form>
+            </main>
+            <button class="btn btn-primary px-5 mb-5" type="button">
+                Call to action
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="videoModalLabel">影片播放</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <a href="https://www.youtube.com/embed/_KoEb4LZPaU?si=KSG0BdV9ybeqgpbY" title="淨零知多少—政策及相關法規"><img
+                            src="2050.jpg" class="d-block w-100"></a>
+
+                    <iframe id="videoIframe" width="100%" height="400" src="" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="b-example-divider"></div>
+    <div class="container my-5" data-aos="fade-up" data-aos-delay="100">
+        <div class="position-relative p-5 text-center text-muted bg-body border border-dashed rounded-5">
+            <button type="button"
+                class="position-absolute top-0 end-0 p-3 m-3 btn-close bg-secondary bg-opacity-10 rounded-pill"
+                aria-label="Close"></button>
+            <svg class="bi mt-5 mb-3" width="48" height="48">
+                <use xlink:href="#check2-circle" />
+            </svg>
+            <h1 class="text-body-emphasis">大螢幕 右上有圓形關閉鈕 Placeholder jumbotron</h1>
+            <main class="form-signin w-100 m-auto">
+                <form>
+                    <img src="2050.jpg" alt="Bootstrap" width="72" height="57" onclick="openModal()"
+                        style="cursor: pointer;">
+                    <h1 class="h3 mb-3 fw-normal my-1 fw-bold fs-2">請登入</h1>
+
+                    <div class="form-floating mb-5">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">電子郵件位址</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                        <label for="floatingPassword">密碼</label>
+                    </div>
+
+                    <div class="form-check text-start my-5">
+                        <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            記住我
+                        </label>
+                    </div>
+                    <button class="btn btn-primary w-100 py-2" type="submit">登入</button>
+                    <p class="mt-5 mb-3 text-body-secondary">&copy; 2024–2025</p>
+                </form>
+            </main>
+            <button class="btn btn-primary px-5 mb-5" type="button">
+                Call to action
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="webpageModal" tabindex="-1" aria-labelledby="webpageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="webpageModalLabel">網頁內容</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <iframe id="webpageIframe" width="100%" height="600" src="" frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            // 在這裡更改為你要加載的網頁URL
+            const webpageUrl = "https://www.youtube.com/watch?v=Qs90UM5T9QU";  // 請更改為你希望加載的網頁地址
+            document.getElementById('webpageIframe').src = webpageUrl;
+            // 顯示模態框
+            var myModal = new bootstrap.Modal(document.getElementById('webpageModal'));
+            myModal.show();
+        }
+
+        // 在模態框關閉後停止網頁加載
+        document.getElementById('webpageModal').addEventListener('hidden.bs.modal', function () {
+            document.getElementById('webpageIframe').src = "";
+        });
+    </script>
 
 
 
+    <div class="b-example-divider"></div>
 
-    <div class="container px-4 py-5">
-        <h2 class="pb-2 border-bottom">Features with title</h2>
+    <div class="container px-4 py-5 " data-aos="fade-up" data-aos-delay="100">
+        <h2 class="pb-2 border-bottom"> 左邊一大圖 右邊四小圖 Features with title</h2>
 
-        <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
+        <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5 data-aos=fade-up">
             <div class="col d-flex flex-column align-items-start gap-2">
                 <h2 class="fw-bold text-body-emphasis">Left-aligned title explaining these awesome features</h2>
                 <p class="text-body-secondary">Paragraph of text beneath the heading to explain the heading. We'll add
@@ -493,7 +628,7 @@
                 <a href="#" class="btn btn-primary btn-lg">Primary button</a>
             </div>
 
-            <div class="col">
+            <div class="col data-aos=fade-up">
                 <div class="row row-cols-1 row-cols-sm-2 g-4">
                     <div class="col d-flex flex-column gap-2">
                         <div
@@ -542,6 +677,9 @@
             </div>
         </div>
     </div>
+
+
+
 
 
     <hr class="featurette-divider" id="page4">
@@ -752,6 +890,19 @@
                 // 模擬轉跳至會員登入頁面
                 window.location.href = "login.html"; // 替換為實際的登入頁面路徑
             }
+        </script>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+        <script>
+            // 初始化AOS
+            AOS.init({
+                offset: 100, // 設置滾動觸發的偏移量
+                delay: 0,    // 設置動畫延遲時間
+                duration: 600,  // 設置動畫持續時間
+                easing: 'ease-in-out', // 設置動畫的緩動效果
+                once: true, // 設置動畫只觸發一次
+            });
         </script>
 
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
