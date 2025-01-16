@@ -50,19 +50,32 @@
             call: function (data) {
                 console.log(`call data is ${data}`);
 
+                // 上面執行後結果:
+                // myObj {s1: 'amy', s2: 'bob', s3: 'cat', sayHello: ƒ}
             },
             helloS1: function () {
                 console.log('this', this);
                 console.log('this.s1', this.s1);
+
+                // 上面執行後結果:
+                // this {s1: 'amy', s2: 'bob', s3: 'cat', sayHello: ƒ, call: ƒ, …}
             },
             helloS2: () => {
                 console.log('this', this);
                 console.log('this.s2', this.s2);
+
+                // 上面執行後結果:
+                // this Window { window: Window, self: Window, document: document, name: '', location: Location, … }
+                // undefined的原因：
+                // 箭頭函式的沒辦法找到this, 所以要改成object
+                // 結論：箭頭函式的this指向的是object
+
+                // 解法一 不用箭頭函式
+                // 解法二 用myObj
+                console.log('myObj', myObj);
+                console.log('myObj.s2', myObj.s2);
             },
         }
-        // 上面執行後結果:
-        // myObj {s1: 'amy', s2: 'bob', s3: 'cat', sayHello: ƒ}
-
 
 
         console.log('myObj array ?', Array.isArray(myObj));
@@ -122,11 +135,5 @@
 
     </script>
 </body>
-
-
-
-
-
-
 
 </html>
