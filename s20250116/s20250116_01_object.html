@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- link css 順序 1.bs 2.self -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+        integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <!-- js include 順序 1.bs 2.jq 3.self -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
+        integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+
+        //　參考網址：https://www.w3schools.com/php/php_oop_classes_objects.asp
+
+        // 原生的Array 才能做forEach
+        // 所有的object都可以放method
+        // function可以吃到外面的資料
+
+        let myArr = [1, 2, 3];
+        console.log('myArr', myArr);
+        // 上面執行後結果→ myArr (3) [1, 2, 3]
+
+        console.log('myArr typeof', typeof (myArr));
+        // 上面執行後結果→ myArr typeof object
+
+        console.log('myArr array ?', Array.isArray(myArr));
+        // 上面執行後結果→ myArr array ? true
+
+
+        let myObj = {
+            s1: 'amy',
+            s2: 'bob',
+            s3: 'cat',
+            sayHello: function () {
+                console.log('hello');
+            },
+            call: function (data) {
+                console.log(`call data is ${data}`);
+
+            },
+            helloS1: function () {
+                console.log('this', this);
+                console.log('this.s1', this.s1);
+            },
+            helloS2: () => {
+                console.log('this', this);
+                console.log('this.s2', this.s2);
+            },
+        }
+        // 上面執行後結果:
+        // myObj {s1: 'amy', s2: 'bob', s3: 'cat', sayHello: ƒ}
+
+
+
+        console.log('myObj array ?', Array.isArray(myObj));
+        // 上面執行後結果→ myObj array ? false
+
+
+        let s2Var = 's2';
+        let objName = 'taisan';
+        console.log('myObj', myObj);
+        console.log('myObj["s1"]', myObj['s1']);
+        // 上面執行後結果→ myObj["s1"] amy
+
+        console.log('myObj點s1', myObj.s1);
+        // 上面執行後結果→ myObj點s1 amy
+
+        console.log('myObj點[s2Var]', myObj[s2Var]);
+        // 上面執行後結果→ myObj點[s2Var] bob
+
+        console.log('myObj點[s2Var]', myObj[objName]);
+        // 上面執行後結果→ myObj點[s2Var] undefined
+
+        console.log('myObj點sayHello', myObj.sayHello);
+        // 上面執行後結果→
+        // myObj點sayHello ƒ () {
+        //         console.log('heiio');
+        //     }
+
+
+
+        // 有括弧才會執行裡面的function
+        myObj.sayHello();
+        // 上面執行後結果→ hello
+
+        myObj['sayHello']();
+        // 上面執行後結果→ hello
+
+        myObj.call('kai hello');
+        // 上面執行後結果→ call data is kai hello
+
+
+
+        // PHP OOP: 點. 、箭頭 -> 、[]
+
+        myObj.helloS1();
+        // 上面執行後結果→
+        // this {s1: 'amy', s2: 'bob', s3: 'cat', sayHello: ƒ, call: ƒ, …}
+        // this.s1 amy
+
+        myObj.helloS2();
+        // 上面執行後結果→
+        // this Window { window: Window, self: Window, document: document, name: '', location: Location, … }
+        // his.s2 undefined
+
+        // undefined的原因：
+        // 箭頭函式的沒辦法找到this, 所以要改成object
+        // 結論：箭頭函式的this指向的是object
+
+    </script>
+</body>
+
+
+
+
+
+
+
+</html>
