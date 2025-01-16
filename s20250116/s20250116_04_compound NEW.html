@@ -25,6 +25,24 @@
     <div class="container mt-3">
         <h2>複利計算機</h2>
         <p>複利計算: 依據輸入的數據(每年投資金額 / 年利率)，計算複利金額</p>
+
+        <!-- 輸入框：本金 -->
+        <div class="mb-3">
+            <label for="originMoney" class="form-label">本金 (NT$)：</label>
+            <input type="number" class="form-control" id="originMoney" value="100000">
+        </div>
+
+        <!-- 輸入框：年利率 -->
+        <div class="mb-3">
+            <label for="rate" class="form-label">年利率 (%)：</label>
+            <input type="number" class="form-control" id="rate" value="1.08" step="0.01">
+        </div>
+
+        <button class="btn btn-primary" id="calculateBtn">計算複利</button>
+
+        <hr>
+
+        <p>複利計算結果:</p>
         <table class="table table-bordered" id="myTable">
             <thead>
                 <tr>
