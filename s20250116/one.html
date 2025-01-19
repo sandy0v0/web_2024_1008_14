@@ -532,8 +532,8 @@
                 </div>
                 <div class="modal-body">
 
-                    <a href="https://www.youtube.com/embed/_KoEb4LZPaU?si=KSG0BdV9ybeqgpbY" title="淨零知多少—政策及相關法規"><img
-                            src="2050.jpg" class="d-block w-100"></a>
+                    <a href="https://greenlifestyle.moenv.gov.tw/gamePage" title="淨零知多少—政策及相關法規"><img src="2050.jpg"
+                            class="d-block w-100"></a>
 
                     <iframe id="videoIframe" width="100%" height="400" src="" frameborder="0" allowfullscreen></iframe>
                 </div>
@@ -556,10 +556,8 @@
                 <form>
                     <img src="2050.jpg" alt="Bootstrap" width="72" height="57" onclick="openModal()"
                         style="cursor: pointer;">
-
                 </form>
             </main>
-
         </div>
     </div>
 
@@ -572,7 +570,8 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <iframe id="webpageIframe" width="100%" height="600" src="" frameborder="0"></iframe>
+                    <iframe id="webpageIframe" width="100%" height="600" src="" frameborder="0"
+                        allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -581,7 +580,7 @@
     <script>
         function openModal() {
             // 在這裡更改為你要加載的網頁URL
-            const webpageUrl = "https://www.youtube.com/watch?v=Qs90UM5T9QU";  // 請更改為你希望加載的網頁地址
+            const webpageUrl = "https://www.youtube.com/embed/_KoEb4LZPaU?si=FkvirGT7_gEorTgH";  // 嵌入式YouTube影片網址
             document.getElementById('webpageIframe').src = webpageUrl;
             // 顯示模態框
             var myModal = new bootstrap.Modal(document.getElementById('webpageModal'));
@@ -592,6 +591,45 @@
         document.getElementById('webpageModal').addEventListener('hidden.bs.modal', function () {
             document.getElementById('webpageIframe').src = "";
         });
+    </script>
+
+
+    <div class="b-example-divider"></div>
+    <div class="container my-5" data-aos="fade-up" data-aos-delay="100">
+        <div class="position-relative p-5 text-center text-muted bg-body border border-dashed rounded-5">
+            <button type="button"
+                class="position-absolute top-0 end-0 p-3 m-3 btn-close bg-secondary bg-opacity-10 rounded-pill"
+                aria-label="Close"></button>
+            <svg class="bi mt-5 mb-3" width="48" height="48">
+                <use xlink:href="#check2-circle" />
+            </svg>
+            <h1 class="text-body-emphasis">大螢幕 右上有圓形關閉鈕 Placeholder jumbotron</h1>
+            <main class="form-signin w-100 m-auto">
+                <form>
+                    <!-- 點擊圖片觸發新視窗 -->
+                    <img src="2050.jpg" alt="Bootstrap" width="72" height="57" onclick="openNewWindow()"
+                        style="cursor: pointer;">
+                </form>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        function openNewWindow() {
+            // 指定目標網址
+            const webpageUrl = "https://greenlifestyle.moenv.gov.tw/gamePage"; // 替換為你要開啟的目標網址
+
+            // 設定視窗屬性
+            const windowFeatures = "width=1200,height=1000 ,resizable=yes,scrollbars=yes";
+
+            // 彈出新視窗
+            const newWindow = window.open(webpageUrl, "_blank", windowFeatures);
+
+            // 判斷是否成功開啟
+            if (!newWindow || newWindow.closed || typeof newWindow.closed === "undefined") {
+                alert("無法開啟新視窗，請檢查瀏覽器是否允許彈出視窗。");
+            }
+        }
     </script>
 
 
