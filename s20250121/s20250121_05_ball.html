@@ -167,6 +167,7 @@
                 style="display: none;">投&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;球</button>
             <button type="button" id="resetBtn"
                 class="btn btn-danger btn-lg">重&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;置</button>
+
         </div>
     </div>
 
@@ -199,7 +200,7 @@
             let scoreVar = 0;
             let myInterval;
             let scoreHighVar = localStorage.getItem('highScore') || 0;
-            let timeVar = 12; // 設定初始時間為 12 秒
+            let timeVar = 60; // 設定初始時間為 60 秒
             let gameFlag = false;  // 當遊戲進行時為 true
             let tmpTime = timeVar;
 
@@ -308,6 +309,14 @@
 
                 // 解除投球按鈕禁用狀態
                 shootBtn.prop('disabled', false);
+            });
+
+            // 最高分數清除
+            $('#clearHighScore').click(function () {
+                localStorage.setItem('highScore', 0);  // 清除 localStorage 中的最高分數
+                scoreHighVar = 0;  // 更新分數變數
+                highScore.text(scoreHighVar);  // 更新頁面上的顯示
+                console.log('最高分數已清除，當前最高分數為：', scoreHighVar);  // 顯示在控制台
             });
         });
     </script>
