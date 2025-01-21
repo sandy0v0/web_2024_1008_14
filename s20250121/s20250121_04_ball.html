@@ -4,17 +4,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>投籃大賽</title>
     <!-- link css 順序 1.bs 2.self -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
         integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        .box1 {
+        h2 {
+            margin-top: 50px;
+            /* 增加上方白色空間 */
+        }
+
+        body {
+            position: relative;
+            background-image: url('images/ball01.jpg');
+            background-size: contain;
+            /* 背景圖片完整顯示 */
+            background-position: center;
+            /* 背景圖片置中 */
+            background-repeat: no-repeat;
+            /* 不重複圖片 */
+            height: 80vh;
+            margin: 10px 310px 130px 310px;
+        }
+
+
+        /* 增加淡化效果 */
+        body::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 10;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            /* 半透明白色覆蓋背景 */
+            z-index: -1;
+            /* 確保不會遮擋內容 */
             border: 5px solid black;
-            margin: auto;
-            width: 80%;
-            height: 50vh;
+        }
+
+        .box1 {
+            border: 10px solid rgb(255, 50, 50);
+            margin: 25px auto 0 auto;
+            /* 調整黑色框線位置往上 */
+            width: 90%;
+            height: 45vh;
             /* background-color: lightblue; */
         }
 
@@ -29,11 +64,11 @@
         }
 
         span {
-            font-size: 40px;
+            font-size: 50px;
         }
 
         img {
-            /* width: 100%; */
+            width: 100%;
         }
 
         .container-box {
@@ -42,11 +77,40 @@
             align-items: center;
         }
 
-        .img-box {
-            width: 100%;
-            height: 45vh;
-            /* background-color: lightblue; */
-            overflow: hidden;
+
+        /* 球的樣式 */
+        .ball {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-image: url('./images/basketball01.png');
+            background-size: cover;
+            border-radius: 50%;
+            top: 100px;
+            left: 150px;
+            display: none;
+            /* 初始時隱藏 */
+        }
+
+        /* 定義球移動的動畫 */
+        @keyframes throwBall {
+            0% {
+                top: 30%;
+                /* 初始位置：畫面底部 */
+                left: 50%;
+                /* 水平居中 */
+                transform: translateX(-50%);
+                /* 水平置中 */
+            }
+
+            100% {
+                top: 25%;
+                /* 最終位置：畫面中間 */
+                left: 50%;
+                /* 水平置中 */
+                transform: translateX(-50%);
+                /* 完全水平置中 */
+            }
         }
     </style>
 </head>
@@ -54,15 +118,15 @@
 <body>
 
     <div class="container text-center mt-5">
-        <h2>投籃大賽</h2>
-        <hr>
+        <h2><br>投籃大賽</h2>
     </div>
 
     <div class="container text-center mt-5">
         <div class="row">
             <div class="col-2">
                 <div class="img-box">
-                    <img src="./images/ball_left.png" class="img-fluid mt-3 rounded" alt="" srcset="">
+
+                    <img src="./images/ball.gif" class="img-fluid mt-3 rounded" alt="" srcset="">
                 </div>
             </div>
             <div class="col-8">
@@ -72,12 +136,16 @@
                             倒數計時<br>
                             <span id="timer">60</span>
                         </div>
+                        <div>
+                            <br>
+                            <span id=""></span>
+                        </div>
                         <div id="clearHighScore">
                             最高分數<br>
                             <span id="highScore">999</span>
                         </div>
                     </div>
-                    <br><br><br>
+                    <br>
                     <p>
                         分數
                     </p>
@@ -88,7 +156,7 @@
             </div>
             <div class="col-2">
                 <div class="img-box ">
-                    <img src="./images/ball.png" class="img-fluid mt-3 rounded" alt="" srcset="">
+
                 </div>
             </div>
         </div>
@@ -96,16 +164,19 @@
 
     <div class="container text-center mt-5">
         <div class="box2">
-            <button type="button" id="startBtn"
-                class="btn btn-dark btn-lg">開&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;始</button>
-            <button type="button" id="shootBtn"
-                class="btn btn-dark btn-lg">投&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;球</button>
-            <button type="button" id="resetBtn" class="btn btn-danger btn-lg">重&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;置
-
-            </button>
+            <div class=" me-5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+            <button type="button" id="startBtn" class="btn btn-dark btn-lg">
+                開&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;始</button>
+            <button type="button" id="shootBtn" class="btn btn-dark btn-lg">
+                投&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;球</button>
+            <button type="button" id="resetBtn" class="btn btn-danger btn-lg">
+                重&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;置</button>
         </div>
-        <hr>
+
     </div>
+
+    <!-- 球元素 -->
+    <div id="ball" class="ball"></div>
 
     <!-- js include 順序 1.bs 2.jq 3.self -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
@@ -126,8 +197,10 @@
             const shootBtn = $('#shootBtn');
             const resetBtn = $('#resetBtn');
             const clearHighScore = $('#clearHighScore');
+            const ball = $('.ball');  // 這是新增的球元素選取器
 
             let scoreVar = 0;
+            let myInterval;
 
             // 預設0 有最高 就抓最高分數
             // localStorage.setItem('highScore', 0);
@@ -136,7 +209,7 @@
             console.log('scoreHighVar', scoreHighVar);
 
 
-            let timeVar = 3;
+            let timeVar = 12;
             let gameFlag = true;
             let tmpTime = 0;
 
@@ -148,6 +221,7 @@
 
             // 2.action
             startBtn.click(function (e) {
+                // 每秒扣1 : timer -1 / sec / 按下開始 start , 數字到 0 時停止
                 if (gameFlag == false) {
                     console.log('gameFlag false', gameFlag);
                     return false;
@@ -156,31 +230,58 @@
                 shootBtn.show();
                 console.log('startBtn ok');
                 // timer -1 / sec / 開始 start 停止 0
-                const myInterval = setInterval(myTimer, 1000);
+                myInterval = setInterval(myTimer, 1000);
                 tmpTime = timeVar;
-                function myTimer() {
-                    tmpTime = tmpTime - 1;
-                    if (tmpTime < 0) {
-                        gameFlag = false;
-                        clearInterval(myInterval);
-                        startBtn.show();
-                        shootBtn.hide();
-                    } else {
-                        timer.text(tmpTime);
-                    }
+                // function myTimer() {
+                //     tmpTime = tmpTime - 1;
+                //     if (tmpTime < 0) {
+                //         gameFlag = false;
+                //         clearInterval(myInterval);
+                //         startBtn.show();
+                //         shootBtn.hide();
+                //     } else {
+                //         timer.text(tmpTime);
+                //     }
 
-                }
-                function myStop() {
-                    clearInterval(myInterval);
-                }
-
+                // }
+                // function myStop() {
+                //     clearInterval(myInterval);
+                // }
             });
+
+            // 把function拉出來
+            function myTimer() {
+                tmpTime = tmpTime - 1;
+                if (tmpTime < 0) {
+                    gameFlag = false;
+                    clearInterval(myInterval);
+                    startBtn.show();
+                    shootBtn.hide();
+                    // 最高分數 < 目前分數
+                    if (scoreHighVar < scoreVar) {
+                        localStorage.setItem('highScore', scoreVar);
+                        highScore.text(scoreVar);
+                    }
+                } else {
+                    timer.text(tmpTime);
+                }
+
+            }
+            function myStop() {
+                clearInterval(myInterval);
+            }
+
 
             shootBtn.click(function (e) {
                 if (gameFlag == false) {
                     console.log('gameFlag false', gameFlag);
                     return false;
                 }
+
+                // 顯示並開始動畫
+                ball.show();
+                ball.css('animation', 'throwBall 1s forwards');  // 執行動畫
+
                 // 兩分球 31-60
                 // 三分球 0-30
                 // feature
@@ -191,13 +292,21 @@
                     scoreVar += 2;
                 }
 
-                // 最高分數 < 目前分數
-                if (scoreHighVar < scoreVar) {
-                    localStorage.setItem('highScore', scoreVar);
-                    highScore.text(scoreVar);
-                }
+                // // 最高分數 < 目前分數
+                // if (scoreHighVar < scoreVar) {
+                //     localStorage.setItem('highScore', scoreVar);
+                //     highScore.text(scoreVar);
+                // }
 
                 nowScore.text(scoreVar);
+
+                // 動畫結束後隱藏球，並重置位置
+                setTimeout(function () {
+                    ball.hide();
+                    ball.css('top', '100px');  // 重置球的位置
+                    ball.css('left', '150px'); // 重置球的位置
+                }, 500); // 等待動畫結束後重
+
             });
 
             resetBtn.click(function (e) {
@@ -214,9 +323,14 @@
                 gameFlag = true;
                 console.log('gameFlag', gameFlag);
 
+
+
                 // 分數 0
                 scoreVar = 0;
                 nowScore.text(scoreVar);
+                clearInterval(myInterval);
+                startBtn.show();
+                shootBtn.hide();
             });
 
             // 最高分數清除
@@ -226,7 +340,6 @@
                 scoreHighVar = localStorage.getItem('highScore');
                 console.log('scoreHighVar', scoreHighVar);
                 highScore.text(scoreHighVar);
-
             });
 
         });
