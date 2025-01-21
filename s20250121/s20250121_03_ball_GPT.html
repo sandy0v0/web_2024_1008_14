@@ -24,6 +24,19 @@
             margin: 10px 310px 130px 310px;
         }
 
+        /* 增加淡化效果 */
+        body::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 10;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            z-index: -1;
+            border: 5px solid black;
+        }
+
         .box1 {
             border: 10px solid rgb(255, 50, 50);
             margin: 25px auto 0 auto;
@@ -55,30 +68,36 @@
 
         /* 球的樣式 */
         .ball {
+            position: absolute;
             width: 50px;
             height: 50px;
-            background-image: url('images/ball.gif');
+            background-image: url('./images/basketball01.png');
             background-size: cover;
-            position: absolute;
-            display: none;
             border-radius: 50%;
+            top: 100px;
+            left: 150px;
+            display: none;
+            /* 初始時隱藏 */
         }
 
-        /* 投籃動畫 */
+        /* 定義球移動的動畫 */
         @keyframes throwBall {
             0% {
-                transform: translate(0, 0);
-                opacity: 1;
-            }
-
-            50% {
-                transform: translate(100px, -200px);
-                opacity: 0.8;
+                top: 30%;
+                /* 初始位置：畫面底部 */
+                left: 50%;
+                /* 水平居中 */
+                transform: translateX(-50%);
+                /* 水平置中 */
             }
 
             100% {
-                transform: translate(200px, 0);
-                opacity: 0;
+                top: 25%;
+                /* 最終位置：畫面中間 */
+                left: 50%;
+                /* 水平置中 */
+                transform: translateX(-50%);
+                /* 完全水平置中 */
             }
         }
     </style>
@@ -94,7 +113,8 @@
         <div class="row">
             <div class="col-2">
                 <div class="img-box">
-                    <img src="./images/ball_left.png" class="img-fluid mt-3 rounded" alt="" srcset="">
+                    <!-- <img src="./images/ball_lef.png" class="img-fluid mt-3 rounded" alt="" srcset=""> -->
+                    <img src="./images/ball.gif" class="img-fluid mt-3 rounded" alt="" srcset="">
                 </div>
             </div>
             <div class="col-8">
@@ -105,11 +125,15 @@
                             <span id="timer">60</span>
                         </div>
                         <div>
+                            <br>
+                            <span id=""></span>
+                        </div>
+                        <div>
                             最高分數<br>
                             <span id="highScore">999</span>
                         </div>
                     </div>
-                    <br><br><br>
+                    <br>
                     <p>
                         分數
                     </p>
@@ -120,7 +144,7 @@
             </div>
             <div class="col-2">
                 <div class="img-box ">
-                    <img src="./images/ball.gif" class="img-fluid mt-3 rounded" alt="" srcset="">
+                    <!-- <img src="./images/ball.gif" class="img-fluid mt-3 rounded" alt="" srcset=""> -->
                 </div>
             </div>
         </div>
@@ -128,18 +152,20 @@
 
     <div class="container text-center mt-5">
         <div class="box2">
-            <button type="button" id="startBtn"
-                class="btn btn-dark btn-lg">開&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;始</button>
-            <button type="button" id="shootBtn"
-                class="btn btn-dark btn-lg">投&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;球</button>
-            <button type="button" id="resetBtn"
-                class="btn btn-danger btn-lg">重&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;置</button>
+            <div class=" me-5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+            <button type="button" id="startBtn" class="btn btn-dark btn-lg">
+                開&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;始</button>
+            <button type="button" id="shootBtn" class="btn btn-dark btn-lg">
+                投&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;球</button>
+            <button type="button" id="resetBtn" class="btn btn-danger btn-lg">
+                重&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;置</button>
         </div>
     </div>
 
     <!-- 球元素 -->
     <div id="ball" class="ball"></div>
 
+    <!-- js include 順序 1.bs 2.jq 3.self -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
         integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -147,11 +173,56 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <script>
         $(document).ready(function () {
-            const ball = $('#ball'); // 獲取球元素
+
+            // 1.bind
+            const nowScore = $('#nowScore');
+            const highScore = $('#highScore');
+            const timer = $('#timer');
+            const startBtn = $('#startBtn');
             const shootBtn = $('#shootBtn');
-            const box1 = $('.box1'); // 用來計算範圍的容器
+            const resetBtn = $('#resetBtn');
+            const ball = $('#ball');
+
+            let scoreVar = 0;
+            let scoreHighVar = 0;
+            let timeVar = 12;
+            let gameFlag = true;
+            let tmpTime = 0;
+
+            nowScore.text(scoreVar);
+            highScore.text(scoreHighVar);
+            timer.text(timeVar);
+
+            shootBtn.hide();
+
+            // 2.action
+            startBtn.click(function (e) {
+                if (gameFlag == false) {
+                    console.log('gameFlag false', gameFlag);
+                    return false;
+                }
+                startBtn.hide();
+                shootBtn.show();
+                console.log('startBtn ok');
+
+                const myInterval = setInterval(myTimer, 1000);
+                tmpTime = timeVar;
+
+                function myTimer() {
+                    tmpTime = tmpTime - 1;
+                    if (tmpTime < 0) {
+                        gameFlag = false;
+                        clearInterval(myInterval);
+                        startBtn.show();
+                        shootBtn.hide();
+                    } else {
+                        timer.text(tmpTime);
+                    }
+                }
+            });
 
             shootBtn.click(function (e) {
                 if (gameFlag == false) {
@@ -159,25 +230,31 @@
                     return false;
                 }
 
-                // 取得點擊位置 (相對於盒子的偏移)
-                const offsetX = e.clientX - box1.offset().left;
-                const offsetY = e.clientY - box1.offset().top;
-
-                // 讓球顯示並且設置位置
+                // 顯示並開始動畫
                 ball.show();
-                ball.css({
-                    left: offsetX - ball.width() / 2 + 'px',
-                    top: offsetY - ball.height() / 2 + 'px'
-                });
+                ball.css('animation', 'throwBall 1s forwards');
 
-                // 開始動畫
-                ball.css('animation', 'throwBall 2s forwards');
+                // 更新分數
+                if (tmpTime <= 10) {
+                    scoreVar += 3;
+                } else {
+                    scoreVar += 2;
+                }
 
-                // 動畫結束後隱藏球
-                ball.on('animationend', function () {
+                nowScore.text(scoreVar);
+
+                // 動畫結束後隱藏球，並重置位置
+                setTimeout(function () {
                     ball.hide();
-                });
+                    ball.css('top', '100px');
+                    ball.css('left', '150px');
+                }, 1000); // 等待動畫結束後重置
             });
+
+            resetBtn.click(function (e) {
+                console.log('resetBtn ok');
+            });
+
         });
     </script>
 </body>

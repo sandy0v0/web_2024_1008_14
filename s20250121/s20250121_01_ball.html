@@ -89,7 +89,8 @@
         <div class="row">
             <div class="col-2">
                 <div class="img-box">
-                    <img src="./images/ball_lef.png" class="img-fluid mt-3 rounded" alt="" srcset="">
+                    <!-- <img src="./images/ball_lef.png" class="img-fluid mt-3 rounded" alt="" srcset=""> -->
+                    <img src="./images/ball.gif" class="img-fluid mt-3 rounded" alt="" srcset="">
                 </div>
             </div>
             <div class="col-8">
@@ -100,11 +101,15 @@
                             <span id="timer">60</span>
                         </div>
                         <div>
+                            <br>
+                            <span id=""></span>
+                        </div>
+                        <div id="clearHighScore">
                             最高分數<br>
                             <span id="highScore">999</span>
                         </div>
                     </div>
-                    <br><br><br>
+                    <br>
                     <p>
                         分數
                     </p>
@@ -115,7 +120,7 @@
             </div>
             <div class="col-2">
                 <div class="img-box ">
-                    <img src="./images/ball.gif" class="img-fluid mt-3 rounded" alt="" srcset="">
+                    <!-- <img src="./images/ball.gif" class="img-fluid mt-3 rounded" alt="" srcset=""> -->
                 </div>
             </div>
         </div>
@@ -123,6 +128,7 @@
 
     <div class="container text-center mt-5">
         <div class="box2">
+            <div class=" me-5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
             <button type="button" id="startBtn" class="btn btn-dark btn-lg">
                 開&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;始</button>
             <button type="button" id="shootBtn" class="btn btn-dark btn-lg">
@@ -151,10 +157,19 @@
             const startBtn = $('#startBtn');
             const shootBtn = $('#shootBtn');
             const resetBtn = $('#resetBtn');
+            const clearHighScore = $('#clearHighScore');
 
             let scoreVar = 0;
-            let scoreHighVar = 0;
-            let timeVar = 12;
+            let myInterval;
+
+            // 預設0 有最高 就抓最高分數
+            // localStorage.setItem('highScore', 0);
+            // let scoreHighVar = 0;
+            let scoreHighVar = localStorage.getItem('highScore');
+            console.log('scoreHighVar', scoreHighVar);
+
+
+            let timeVar = 10;
             let gameFlag = true;
             let tmpTime = 0;
 
@@ -175,34 +190,51 @@
                 shootBtn.show();
                 console.log('startBtn ok');
                 // timer -1 / sec / 開始 start 停止 0
-                const myInterval = setInterval(myTimer, 1000);
+                myInterval = setInterval(myTimer, 1000);
                 tmpTime = timeVar;
-                function myTimer() {
-                    tmpTime = tmpTime - 1;
-                    if (tmpTime < 0) {
-                        gameFlag = false;
-                        clearInterval(myInterval);
-                        startBtn.show();
-                        shootBtn.hide();
-                    } else {
-                        timer.text(tmpTime);
-                    }
+                // function myTimer() {
+                //     tmpTime = tmpTime - 1;
+                //     if (tmpTime < 0) {
+                //         gameFlag = false;
+                //         clearInterval(myInterval);
+                //         startBtn.show();
+                //         shootBtn.hide();
+                //     } else {
+                //         timer.text(tmpTime);
+                //     }
 
-                }
-                function myStop() {
-                    clearInterval(myInterval);
-                }
-
+                // }
+                // function myStop() {
+                //     clearInterval(myInterval);
+                // }
             });
+
+            // 把function拉出來
+            function myTimer() {
+                tmpTime = tmpTime - 1;
+                if (tmpTime < 0) {
+                    gameFlag = false;
+                    clearInterval(myInterval);
+                    startBtn.show();
+                    shootBtn.hide();
+                } else {
+                    timer.text(tmpTime);
+                }
+
+            }
+            function myStop() {
+                clearInterval(myInterval);
+            }
+
 
             shootBtn.click(function (e) {
                 if (gameFlag == false) {
                     console.log('gameFlag false', gameFlag);
                     return false;
                 }
-
                 // 兩分球 31-60
                 // 三分球 0-30
+                // feature
                 console.log('tmpTime', tmpTime);
                 if (tmpTime <= 10) {
                     scoreVar += 3;
@@ -210,25 +242,45 @@
                     scoreVar += 2;
                 }
 
+                // 最高分數 < 目前分數
+                if (scoreHighVar < scoreVar) {
+                    localStorage.setItem('highScore', scoreVar);
+                    highScore.text(scoreVar);
+                }
+
                 nowScore.text(scoreVar);
             });
 
             resetBtn.click(function (e) {
                 console.log('resetBtn ok');
+                // 倒數計時 60
+                // 分數 0
+
+                // 倒數計時 60
+                tmpTime = 0
+                timer.text(timeVar);
+                console.log('timeVar', timeVar);
+                console.log('tmpTime', tmpTime);
+                // gameFlag false false
+                gameFlag = true;
+                console.log('gameFlag', gameFlag);
+
+                // 分數 0
+                scoreVar = 0;
+                nowScore.text(scoreVar);
+                clearInterval(myInterval);
+                startBtn.show();
+                shootBtn.hide();
             });
 
-            // 倒數計時 60
-            // 分數 0
-            // 倒數計時 60
-            timeVar = 12
-            tmpTime = 0
-            timer.text(timeVar);
-            console.log('timeVar', timeVar);
-            console.log('tmpTime', tmpTime);
-            // gameFlag false false
-            gameFlag = true;
-            console.log('gameFlag', gameFlag);
-            // 分數 0
+            // 最高分數清除
+            clearHighScore.click(function (e) {
+                localStorage.setItem('highScore', 0);
+                scoreHighVar = 0;
+                scoreHighVar = localStorage.getItem('highScore');
+                console.log('scoreHighVar', scoreHighVar);
+                highScore.text(scoreHighVar);
+            });
 
         });
     </script>
