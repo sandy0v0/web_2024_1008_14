@@ -169,7 +169,7 @@
             console.log('scoreHighVar', scoreHighVar);
 
 
-            let timeVar = 10;
+            let timeVar = 12;
             let gameFlag = true;
             let tmpTime = 0;
 
@@ -217,6 +217,11 @@
                     clearInterval(myInterval);
                     startBtn.show();
                     shootBtn.hide();
+                    // 最高分數 < 目前分數
+                    if (scoreHighVar < scoreVar) {
+                        localStorage.setItem('highScore', scoreVar);
+                        highScore.text(scoreVar);
+                    }
                 } else {
                     timer.text(tmpTime);
                 }
@@ -242,11 +247,11 @@
                     scoreVar += 2;
                 }
 
-                // 最高分數 < 目前分數
-                if (scoreHighVar < scoreVar) {
-                    localStorage.setItem('highScore', scoreVar);
-                    highScore.text(scoreVar);
-                }
+                // // 最高分數 < 目前分數
+                // if (scoreHighVar < scoreVar) {
+                //     localStorage.setItem('highScore', scoreVar);
+                //     highScore.text(scoreVar);
+                // }
 
                 nowScore.text(scoreVar);
             });
@@ -264,6 +269,8 @@
                 // gameFlag false false
                 gameFlag = true;
                 console.log('gameFlag', gameFlag);
+
+
 
                 // 分數 0
                 scoreVar = 0;
