@@ -1,0 +1,2 @@
+// 天氣 API 的授權碼
+let pw = 'CWA-C5A0D012-D54B-42FD-A238-F7F3DAEBC74A';
