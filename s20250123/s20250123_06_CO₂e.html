@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- link css 順序 1.bs 2.self -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+        integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <div class="container mt-3">
+        <h2>碳足跡排放係數</h2>
+        <p>https://data.gov.tw/dataset/28176</p>
+        <table class="table table-hover" id="myTable">
+            <thead>
+                <tr>
+                    <th>係數名稱</th>
+                    <th>碳足跡數值 (kgCO2e)</th>
+                    <th>宣告單位</th>
+                    <th>政府部門/公司名稱</th>
+                    <th>公告年份</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be populated here dynamically -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- js include 順序 1.bs 2.jq 3.self -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
+        integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        $(document).ready(function () {
+            const myTable = $('#myTable');
+            const myTbody = myTable.find('tbody');
+
+            // 這裡是讀取你的 JSON 檔案的 URL
+            let url = `./data/data2.json`; // 確保這是你的 JSON 檔案路徑
+
+            $.ajax({
+                type: "GET",
+                url: url,
+                dataType: "json",
+                success: function (res) {
+                    console.log('Received Data:', res);
+
+                    // 清空表格的 tbody
+                    myTbody.empty();
+
+                    // 迭代 JSON 資料並插入每一筆資料到表格中
+                    res.records.forEach(function (item) {
+                        let row = `
+                            <tr>
+                                <td>${item.name}</td>
+                                <td>${item.coe}</td>
+                                <td>${item.unit}</td>
+                                <td>${item.departmentname}</td>
+                                <td>${item.announcementyear}</td>
+                            </tr>
+                        `;
+                        myTbody.append(row);
+                    });
+                },
+                error: function (err) {
+                    console.log('Error fetching data:', err);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
