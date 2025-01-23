@@ -48,12 +48,20 @@
                 success: function (res) {
                     console.log('res', res);
                     // 取得新北市的資料(1)
-                    let data = res.records.location[1].locationName;
+                    let data = res.records.location[3].locationName;
                     // 取得台東縣的資料(12)
                     // let data = res.records.location[12];
+                    data = res.records.location;
                     console.log('data', data);
+
+                    $.each(data, function (key, value) {
+                        console.log('key', key);
+                        console.log('value', value.locationName);
+                    });
                 }
-            });
+
+            })
+
         });
     </script>
 </body>
