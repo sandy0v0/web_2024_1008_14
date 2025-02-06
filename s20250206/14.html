@@ -215,6 +215,26 @@
                         let tmpMaxTtime4 = tmpWeatherElement[1].Time[8].ElementValue[0].MaxTemperature;
                         let tmpMaxTtime5 = tmpWeatherElement[1].Time[10].ElementValue[0].MaxTemperature;
                         let tmpMaxTtime6 = tmpWeatherElement[1].Time[12].ElementValue[0].MaxTemperature;
+                        // wx
+                        let tmpWx0 = tmpWeatherElement[0].time[0].parameter['parameterValue'];
+                        let tmpWx1 = tmpWeatherElement[0].time[1].parameter['parameterValue'];
+                        let tmpWx2 = tmpWeatherElement[0].time[2].parameter['parameterValue'];
+                        let tmpWx3 = tmpWeatherElement[0].time[3].parameter['parameterValue'];
+                        let tmpWx4 = tmpWeatherElement[0].time[4].parameter['parameterValue'];
+                        let tmpWx5 = tmpWeatherElement[0].time[5].parameter['parameterValue'];
+                        let tmpWx6 = tmpWeatherElement[0].time[6].parameter['parameterValue'];
+
+                        // console.log('tmpMinTtime0', tmpMinTtime0);
+                        // console.log('tmpMinTtime1', tmpMinTtime1);
+                        // console.log('tmpMinTtime2', tmpMinTtime2);
+                        console.log('tmpWx0', tmpWx0);
+                        console.log('tmpWx1', tmpWx1);
+                        console.log('tmpWx2', tmpWx2);
+                        console.log('tmpWx3', tmpWx3);
+                        console.log('tmpWx4', tmpWx4);
+                        console.log('tmpWx5', tmpWx5);
+                        console.log('tmpWx6', tmpWx6);
+
 
                         // console.log('tmpMinTtime0', tmpMinTtime0);
                         // console.log('tmpMinTtime1', tmpMinTtime1);
@@ -238,13 +258,13 @@
                             <tr>
                                 <td>${tmpLocationID + 1}</td>
                                 <td>${tmpLocationName}</td>
-                                <td>${tmpMinTtime0} - ${tmpMaxTtime0} 度c</td>
-                                <td>${tmpMinTtime1} - ${tmpMaxTtime1} 度c</td>
-                                <td>${tmpMinTtime2} - ${tmpMaxTtime2} 度c</td>
-                                <td>${tmpMinTtime2} - ${tmpMaxTtime3} 度c</td>
-                                <td>${tmpMinTtime2} - ${tmpMaxTtime4} 度c</td>
-                                <td>${tmpMinTtime2} - ${tmpMaxTtime5} 度c</td>
-                                <td>${tmpMinTtime2} - ${tmpMaxTtime6} 度c</td>
+                                <td>${tmpMinTtime0} - ${tmpMaxTtime0} 度c <img src="./day/${tmpWx0}.svg" alt="" srcset=""></td>
+                                <td>${tmpMinTtime1} - ${tmpMaxTtime1} 度c <img src="./day/${tmpWx1}.svg" alt="" srcset=""></td>
+                                <td>${tmpMinTtime2} - ${tmpMaxTtime2} 度c <img src="./day/${tmpWx2}.svg" alt="" srcset=""></td>
+                                <td>${tmpMinTtime2} - ${tmpMaxTtime3} 度c <img src="./day/${tmpWx3}.svg" alt="" srcset=""></td>
+                                <td>${tmpMinTtime2} - ${tmpMaxTtime4} 度c <img src="./day/${tmpWx4}.svg" alt="" srcset=""></td>
+                                <td>${tmpMinTtime2} - ${tmpMaxTtime5} 度c <img src="./day/${tmpWx5}.svg" alt="" srcset=""></td>
+                                <td>${tmpMinTtime2} - ${tmpMaxTtime6} 度c <img src="./day/${tmpWx6}.svg" alt="" srcset=""></td>
                             </tr>
                         `;
 
