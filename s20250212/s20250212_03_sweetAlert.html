@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SweetAlert練習</title>
+
+    <!-- 引入 Bootstrap 和 SweetAlert2 的樣式 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+        integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.css" />
+
+    <style>
+        body {
+            font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1 style="text-align: center;">SweetAlert練習</h1>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <button id="myBtn" type="button" class="btn btn-primary">myBtn</button>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+            <label for="newsletter1" class="visually-hidden">電子郵件</label>
+            <input id="newsletter1" type="text" class="form-control" placeholder="電子郵件">
+            <button id="myBtn1" class="btn btn-primary" type="button">訂閱</button>
+        </div>
+    </div>
+
+    <!-- js include 順序 1.bs 2.jq 3.self -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
+        integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdn.datatables.net/2.2.2/js/dataTables.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // 1. 綁定事件
+            const myBtn = $('#myBtn');
+            const myBtn1 = $('#myBtn1');
+
+            // 2. 點擊 myBtn 時觸發的 SweetAlert
+            myBtn.click(function () {
+                Swal.fire({
+                    title: "Good job!",
+                    text: "You clicked the button!",
+                    icon: "success"
+                });
+            });
+
+            // 3. 點擊 myBtn1 時觸發的 SweetAlert
+            myBtn1.click(async function () {
+                // 等待使用者輸入電子郵件
+                const { value: email } = await Swal.fire({
+                    title: "輸入電子郵件地址",
+                    input: "email",
+                    inputLabel: "您的電子郵件地址",
+                    inputPlaceholder: "請輸入您的電子郵件地址"
+                });
+
+                // 如果使用者輸入了電子郵件，顯示他們輸入的內容
+                if (email) {
+                    Swal.fire(`輸入信箱: ${email}`);
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
