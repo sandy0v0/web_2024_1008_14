@@ -14,7 +14,10 @@ class StudentController extends Controller
     public function index()
     {
         // $users = DB::table('users')->get();
-        $data = DB::table('students')->get();
+        // $data = DB::table('students')->get();
+        $data=Student::get();
+        // dd($data);
+
         // dd($data[0]->name);
         
         return view('student.index', ['data' => $data]);
@@ -63,7 +66,17 @@ class StudentController extends Controller
      */
     public function edit(string $id)
     {
-        dd("hello edit $id");
+        // $url = route('students.edit', ['student' => $id]);
+        // dd($url);
+        // dd("hello edit $id");
+
+        // get 指的是 fetchAll (在主頁用的)
+        // first 指的是 fetch (單一的)
+        
+        $data=Student::where('id',$id)->first();
+        // dd($data);
+
+        return view('student.edit', ['data' => $data]);
     }
 
     /**
