@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Car;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use App\Models\Student;
 
-class StudentController extends Controller
+class CarController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,13 +13,13 @@ class StudentController extends Controller
     public function index()
     {
         // $users = DB::table('users')->get();
-        // $data = DB::table('students')->get();
-        $data=Student::get();
+        // $data = DB::table('cars')->get();
+        $data=Car::get();
         // dd($data);
 
         // dd($data[0]->name);
         
-        return view('student.index', ['data' => $data]);
+        return view('car.index', ['data' => $data]);
     }
 
     /**
@@ -28,8 +27,8 @@ class StudentController extends Controller
      */
     public function create()
     {
-        // dd('student controller create');
-        return view('student.create');
+        // dd('car controller create');
+        return view('car.create');
     }
 
     /**
@@ -41,15 +40,15 @@ class StudentController extends Controller
         $input = $request->except('_token');
         // dd($input);
 
-        $data = new Student;
+        $data = new Car;
 
         $data->name = $input['name'];
         $data->mobile = $input['mobile'];
 
         $data->save();
 
-        return redirect()->route('students.index');
-        // return redirect('/students');
+        return redirect()->route('cars.index');
+        // return redirect('/cars');
         
     }
 
@@ -66,17 +65,17 @@ class StudentController extends Controller
      */
     public function edit(string $id)
     {
-        // $url = route('students.edit', ['student' => $id]);
+        // $url = route('cars.edit', ['car' => $id]);
         // dd($url);
         // dd("hello edit $id");
 
         // get 指的是 fetchAll (在主頁用的)
         // first 指的是 fetch (單一的)
         
-        $data=Student::where('id',$id)->first();
+        $data=Car::where('id',$id)->first();
         // dd($data);
 
-        return view('student.edit', ['data' => $data]);
+        return view('car.edit', ['data' => $data]);
     }
 
     /**
@@ -86,8 +85,8 @@ class StudentController extends Controller
     {
         // dd("Hello update $id");
         $input =$request->except('_token', '_method');
-        $data = Student::where('id',$id)->first();
-        // $data = Student::find($id);
+        $data = Car::where('id',$id)->first();
+        // $data = Car::find($id);
 
         // "name" => "cat"
         // "mobile" => "0933"
@@ -96,7 +95,7 @@ class StudentController extends Controller
         $data->mobile=$input['mobile'];
         $data->save();
 
-        return redirect()->route('students.index');
+        return redirect()->route('cars.index');
 
     }
 
@@ -106,15 +105,15 @@ class StudentController extends Controller
     public function destroy(string $id)
     {
         // dd("Hello destroy $id");
-        $data = Student::where('id', $id)->first();
+        $data = Car::where('id', $id)->first();
         $data->delete();
-        return redirect()->route('students.index');
+        return redirect()->route('cars.index');
 
     }
 
     public function excel()
     {
-        dd('hello student controller excel');
+        dd('hello car controller excel');
     }
 
     public function sayHello()
