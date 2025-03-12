@@ -33,6 +33,7 @@
                     <th width="10%">NAME</th>
                     <th width="20%">MOBILE</th>
                     <th width="20%">PHONE</th>
+                    <th width="20%">HOBBIES</th>
                     <th>OPT</th>
                 </tr>
             </thead>
@@ -46,9 +47,19 @@
                         <td>{{ $value->name }}</td>
                         <td>{{ $value->mobile }}</td>
                         <td>
+                            <!-- 
                             {{ $value->phone->id ?? ''}}
                             {{ $value->phone->student_id ?? ''}}
                             {{ $value->phone->phone ?? ''}}
+                             -->
+                            {{ $value->phoneRelation->id ?? ''}}
+                            {{ $value->phoneRelation->student_id ?? ''}}
+                            {{ $value->phoneRelation->phone ?? ''}}
+                        </td>
+
+                        <td>
+                            <!-- {{ $value->hobbiesRelation[0]->name ?? ''}} -->
+                            {{ $value->hobbyString ?? ''}}
                         </td>
                         
                         <td>
@@ -96,6 +107,11 @@
                                 <label for="mobile">Mobile:</label>
                                 <input type="mobile" class="form-control" id="mobile" placeholder="Enter mobile"
                                     name="mobile">
+                            </div>
+                            <div class="mb-3 mt-3">
+                                <label for="phone">Phone:</label>
+                                <input type="phone" class="form-control" id="phone" placeholder="Enter phone"
+                                    name="phone">
                             </div>
 
 

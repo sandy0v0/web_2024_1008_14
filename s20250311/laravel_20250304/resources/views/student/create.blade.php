@@ -31,6 +31,11 @@
       <input type="text" class="form-control" id="phone" placeholder="Enter phone" name="phone">
     </div>
 
+    <div class="mb-3">
+      <label for="hobbies">Hobbies: ex(php,html,css,laravel)</label>
+      <input type="text" class="form-control" id="hobbies" placeholder="Enter Hobbies" name="hobbies">
+    </div>
+
     <div class="form-check mb-3">
       <label class="form-check-label">
         <input class="form-check-input" type="checkbox" name="remember"> Remember me

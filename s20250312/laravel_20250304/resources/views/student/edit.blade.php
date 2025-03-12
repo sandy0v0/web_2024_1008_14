@@ -40,7 +40,7 @@
             <div class="mb-3 mt-3">
                 <label for="phone">Phone:</label>
                 <input type="text" class="form-control" id="phone" placeholder="Enter phone" name="phone"
-                    value="{{ $data['phone']['phone'] }}">
+                    value="{{ $data['phoneRelation']['phone'] ?? ''}}">
             </div>
  
              <button type="submit" class="btn btn-primary">Submit</button>
