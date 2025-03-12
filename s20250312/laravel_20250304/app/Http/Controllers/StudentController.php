@@ -88,8 +88,10 @@ class StudentController extends Controller
         // get 指的是 fetchAll (在主頁用的)
         // first 指的是 fetch (單一的)
         
-        $data=Student::where('id',$id)->first();
+        // $data=Student::where('id',$id)->first();
         // dd($data);
+
+        $data=Student::where('id',$id)->with('phone')->first();
 
         return view('student.edit', ['data' => $data]);
     }
@@ -101,15 +103,29 @@ class StudentController extends Controller
     {
         // dd("Hello update $id");
         $input =$request->except('_token', '_method');
-        $data = Student::where('id',$id)->first();
+        // $data = Student::where('id',$id)->first();
         // $data = Student::find($id);
 
         // "name" => "cat"
         // "mobile" => "0933"
 
+
+        //主表
+        $data = Student::where('id',$id)->first();
         $data->name=$input['name'];
         $data->mobile=$input['mobile'];
         $data->save();
+
+        //子表
+        // 刪除子表
+        Phone::where('student_id', $id)->delete();
+        
+        // 新增子表
+        $item = new Phone;
+        $item->student_id = $data->id;
+        $item->phone = $input['phone'];
+        $item->save();
+
 
         return redirect()->route('students.index');
 
