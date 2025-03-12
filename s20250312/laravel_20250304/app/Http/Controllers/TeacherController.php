@@ -2,30 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Teacher;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use App\Models\Student;
-use App\Models\Phone;
 
-class StudentController extends Controller
+class TeacherController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        // dd('student index OK')
         // $users = DB::table('users')->get();
-        // $data = DB::table('students')->get();
-        // $data=Student::get();
+        // $data = DB::table('teachers')->get();
+        $data=Teacher::get();
         // dd($data);
 
-        // $phone = User::find(1)->phone;
-        $data = Student::with('phone')->get();
         // dd($data[0]->name);
-        // dd($data);
         
-        return view('student.index', ['data' => $data]);
+        return view('teacher.index', ['data' => $data]);
     }
 
     /**
@@ -33,8 +27,8 @@ class StudentController extends Controller
      */
     public function create()
     {
-        // dd('student controller create');
-        return view('student.create');
+        // dd('teacher controller create');
+        return view('teacher.create');
     }
 
     /**
@@ -46,25 +40,15 @@ class StudentController extends Controller
         $input = $request->except('_token');
         // dd($input);
 
-        // 主表
-        $data = new Student;
-        // $data->name = $request->name;
-        // $data->mobile = $request->mobile;
+        $data = new Teacher;
 
         $data->name = $input['name'];
         $data->mobile = $input['mobile'];
 
         $data->save();
-        
-        // 子表
-        $item = new Phone;
-        $item->student_id = $data->id;
-        $item->phone = $input['phone'];
 
-        $item->save();
-
-        return redirect()->route('students.index');
-        // return redirect('/students');
+        return redirect()->route('teachers.index');
+        // return redirect('/teachers');
         
     }
 
@@ -81,17 +65,17 @@ class StudentController extends Controller
      */
     public function edit(string $id)
     {
-        // $url = route('students.edit', ['student' => $id]);
+        // $url = route('teachers.edit', ['teacher' => $id]);
         // dd($url);
         // dd("hello edit $id");
 
         // get 指的是 fetchAll (在主頁用的)
         // first 指的是 fetch (單一的)
         
-        $data=Student::where('id',$id)->first();
+        $data=Teacher::where('id',$id)->first();
         // dd($data);
 
-        return view('student.edit', ['data' => $data]);
+        return view('teacher.edit', ['data' => $data]);
     }
 
     /**
@@ -101,8 +85,8 @@ class StudentController extends Controller
     {
         // dd("Hello update $id");
         $input =$request->except('_token', '_method');
-        $data = Student::where('id',$id)->first();
-        // $data = Student::find($id);
+        $data = Teacher::where('id',$id)->first();
+        // $data = Teacher::find($id);
 
         // "name" => "cat"
         // "mobile" => "0933"
@@ -111,7 +95,7 @@ class StudentController extends Controller
         $data->mobile=$input['mobile'];
         $data->save();
 
-        return redirect()->route('students.index');
+        return redirect()->route('teachers.index');
 
     }
 
@@ -121,25 +105,19 @@ class StudentController extends Controller
     public function destroy(string $id)
     {
         // dd("Hello destroy $id");
-        // $data = Student::where('id', $id)->first();
-        // $data->delete();
-
-        // 刪除子表
-        Phone::where('student_id', $id)->delete();
-        // 刪除主表
-        Student::where('id', $id)->delete();
-
-        return redirect()->route('students.index');
+        $data = Teacher::where('id', $id)->first();
+        $data->delete();
+        return redirect()->route('teachers.index');
 
     }
 
     public function excel()
     {
-        dd('hello student controller excel');
+        dd('hello teacher controller excel');
     }
 
     public function sayHello()
     {
-        dd('hello kai');
+        dd('hello sandy');
     }
 }

@@ -11,26 +11,19 @@
 
 <div class="container mt-3">
   <h2>Create form</h2>
-  <form action="{{route('students.store')}}" method="post">
+  <form action="{{route('cars.store')}}" method="post">
     
   <!-- csrf -->
     @csrf
 
     <div class="mb-3 mt-3">
       <label for="name">Name:</label>
-      <input type="text" class="form-control" id="name" placeholder="Enter name" name="name">
+      <input type="name" class="form-control" id="name" placeholder="Enter name" name="name">
     </div>
-    
     <div class="mb-3">
-      <label for="mobile">Mobile:</label>
-      <input type="text" class="form-control" id="mobile" placeholder="Enter mobile" name="mobile">
+      <label for="pwd">Mobile:</label>
+      <input type="password" class="form-control" id="mobile" placeholder="Enter mobile" name="mobile">
     </div>
-
-    <div class="mb-3">
-      <label for="phone">Phone:</label>
-      <input type="text" class="form-control" id="phone" placeholder="Enter phone" name="phone">
-    </div>
-
     <div class="form-check mb-3">
       <label class="form-check-label">
         <input class="form-check-input" type="checkbox" name="remember"> Remember me
