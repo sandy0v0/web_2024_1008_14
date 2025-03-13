@@ -12,6 +12,8 @@ class Student extends Model
      /**
      * Get the phone associated with the user.
      */
+
+    // 這裡是一對一(單數)
     // public function phone(): HasOne
     public function phoneRelation(): HasOne
     {
@@ -22,9 +24,12 @@ class Student extends Model
 /**
       * Get the comments for the blog post.
       */
-      public function hobbiesRelation(): HasMany
-      {
-          return $this->hasMany(Hobby::class);
-      }
+
+    // 這裡是一對多(複數)
+    
+    public function hobbiesRelation(): HasMany
+    {
+        return $this->hasMany(Hobby::class);
+    }
 
 }
